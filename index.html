@@ -2,61 +2,618 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Billy's Cesspool</title>
+<meta name="description" content="Coach called it a cesspool. Billy pulled up a chair. Grab a pool noodle, read the hottest takes in Aggieland, and get your official Cesspool Membership Card.">
+<meta name="theme-color" content="#500000">
+<link rel="canonical" href="https://billyscesspool.me/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Billy's Cesspool">
+<meta property="og:title" content="Billy's Cesspool">
+<meta property="og:description" content="Coach called it a cesspool. Billy pulled up a chair. Come on in, the takes are warm.">
+<meta property="og:url" content="https://billyscesspool.me/">
+<meta property="og:image" content="https://billyscesspool.me/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Billy in his Texas A&amp;M cap above the words Billy's Cesspool">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Billy's Cesspool">
+<meta name="twitter:description" content="Coach called it a cesspool. Billy pulled up a chair. Come on in, the takes are warm.">
+<meta name="twitter:image" content="https://billyscesspool.me/og.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
 <style>
-  :root { --maroon:#500000; --white:#fff; --gold:#d6b25e; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family: Georgia, "Times New Roman", serif; background:var(--maroon); color:var(--white); text-align:center; }
-  header { padding:28px 16px 8px; }
-  .kicker { letter-spacing:4px; text-transform:uppercase; font-family:Arial, sans-serif; font-size:14px; color:var(--gold); }
-  h1 { font-size:clamp(38px,8vw,80px); line-height:1.05; margin:10px 0; text-transform:uppercase; }
-  .sub { font-size:20px; font-style:italic; opacity:.9; }
-  .photo { max-width:820px; margin:20px auto; padding:0 16px; }
-  .photo img { width:100%; border:8px solid var(--white); border-radius:6px; box-shadow:0 12px 40px rgba(0,0,0,.5); }
-  .caption { font-style:italic; opacity:.85; margin-top:10px; }
-  .board { background:var(--white); color:var(--maroon); max-width:820px; margin:30px auto; padding:28px 24px; border-radius:8px; }
-  .board h2 { font-size:28px; margin-bottom:14px; text-transform:uppercase; }
-  .board ul { list-style:none; font-size:20px; line-height:1.9; font-family:Arial, sans-serif; }
-  .btn { display:inline-block; margin:10px 0 40px; padding:16px 34px; background:var(--white); color:var(--maroon); font-family:Arial, sans-serif; font-weight:bold; font-size:20px; border-radius:50px; border:none; cursor:pointer; text-transform:uppercase; }
-  .btn:hover { background:var(--gold); }
-  #count { font-size:48px; font-weight:bold; color:var(--gold); }
-  footer { font-family:Arial, sans-serif; font-size:12px; opacity:.6; padding:20px; }
+:root{--maroon:#500000;--maroon2:#3a0000;--white:#fff;--gold:#d6b25e;--murk1:#4b5a2c;--murk2:#26301a;--ink:#2a0a0a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at top,#6a0a0a 0%,var(--maroon) 45%,var(--maroon2) 100%) fixed;color:var(--white);text-align:center;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.sans{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--gold)}
+header{padding:32px 16px 6px;position:relative}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-family:system-ui,Arial,sans-serif;font-size:13px;color:var(--gold);display:inline-flex;align-items:center;gap:8px}
+.live{width:9px;height:9px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 0 0 rgba(255,59,59,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,59,59,0)}100%{box-shadow:0 0 0 0 rgba(255,59,59,0)}}
+h1{font-size:clamp(40px,9vw,92px);line-height:1;margin:12px 0 10px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 4px 0 #2a0000,0 10px 30px rgba(0,0,0,.45)}
+h1 .gold{color:var(--gold)}
+.sub{font-size:clamp(18px,2.6vw,24px);font-style:italic;opacity:.95}
+.sub2{font-family:system-ui,Arial,sans-serif;font-size:14px;opacity:.75;margin-top:8px}
+
+/* ===== Pool stage ===== */
+.stage{position:relative;max-width:1100px;margin:18px auto 0;height:clamp(440px,62vw,600px);overflow:hidden;border-radius:22px 22px 0 0}
+.stage .sky{position:absolute;inset:0;background:linear-gradient(#5a0808,#3d0303 70%)}
+.tile{position:absolute;left:0;right:0;bottom:0;height:38%;background:
+ repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 46px),
+ repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,transparent 2px 46px),#2b1b10}
+.sign{position:absolute;top:18px;left:18px;background:var(--white);color:var(--maroon);font-family:system-ui,Arial,sans-serif;font-weight:800;font-size:12px;letter-spacing:1px;padding:8px 10px;border-radius:6px;text-transform:uppercase;transform:rotate(-4deg);box-shadow:0 6px 16px rgba(0,0,0,.4);line-height:1.35;z-index:3}
+.sign small{display:block;font-weight:600;color:#7a2a2a;letter-spacing:.5px}
+.sign.r{left:auto;right:18px;transform:rotate(5deg)}
+.ring{position:absolute;right:7%;bottom:22%;width:clamp(70px,11vw,110px);aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--white) 0 45deg,var(--maroon) 45deg 90deg,var(--white) 90deg 135deg,var(--maroon) 135deg 180deg,var(--white) 180deg 225deg,var(--maroon) 225deg 270deg,var(--white) 270deg 315deg,var(--maroon) 315deg 360deg);-webkit-mask:radial-gradient(circle,transparent 38%,#000 39%);mask:radial-gradient(circle,transparent 38%,#000 39%);animation:bob 4.2s ease-in-out infinite reverse;z-index:4;filter:drop-shadow(0 6px 6px rgba(0,0,0,.4))}
+.floaty{position:absolute;left:50%;top:8%;width:min(560px,78%);transform:translateX(-50%);z-index:2;animation:bob 3.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.2deg)}50%{transform:translateX(-50%) translateY(14px) rotate(1.2deg)}}
+.ring{transform:none}
+@keyframes bobring{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(10px) rotate(20deg)}}
+.ring{animation-name:bobring}
+.frame{background:var(--white);padding:10px;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.frame img{display:block;width:100%;height:auto;border-radius:4px}
+.plate{display:inline-block;margin-top:-18px;position:relative;background:linear-gradient(#e9cf8c,#b88f3c);color:#3a1d00;font-family:system-ui,Arial,sans-serif;font-weight:900;letter-spacing:6px;padding:9px 22px 8px 28px;border-radius:6px;border:2px solid #7c5a17;box-shadow:0 6px 14px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.6);text-transform:uppercase;font-size:clamp(13px,1.8vw,17px)}
+.plate small{display:block;letter-spacing:1px;font-weight:600;font-size:10px;opacity:.8}
+#water{position:absolute;left:0;right:0;bottom:0;width:100%;height:34%;z-index:3;pointer-events:none}
+
+/* ===== Controls ===== */
+.controls{max-width:1100px;margin:0 auto;background:linear-gradient(#26301a,#1b2213);border-radius:0 0 22px 22px;padding:22px 18px 26px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:center;box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.meter{display:flex;gap:14px;align-items:center;text-align:left}
+.gauge{position:relative;width:46px;height:190px;border-radius:24px;background:#0f140a;border:3px solid var(--gold);overflow:hidden;box-shadow:inset 0 0 12px rgba(0,0,0,.7)}
+.gauge .fill{position:absolute;left:0;right:0;bottom:0;height:4%;background:linear-gradient(#7f9a3e,#4b5a2c 60%,#323d1c);transition:height .6s cubic-bezier(.3,1.6,.5,1)}
+.gauge .fill::before{content:"";position:absolute;left:-10%;right:-10%;top:-6px;height:12px;background:radial-gradient(circle at 25% 100%,#9bb556 6px,transparent 7px),radial-gradient(circle at 75% 100%,#9bb556 6px,transparent 7px);animation:slosh 1.4s ease-in-out infinite alternate}
+@keyframes slosh{to{transform:translateX(8px)}}
+.ticks{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 18px,rgba(255,255,255,.25) 18px 19px)}
+.meter h3{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-family:system-ui,Arial,sans-serif}
+.depth{font-size:40px;font-weight:bold;line-height:1.1}
+.level{font-style:italic;opacity:.9;max-width:220px}
+.mine{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.6;margin-top:6px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{appearance:none;border:none;cursor:pointer;font-family:system-ui,Arial,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:1px;font-size:18px;padding:16px 28px;border-radius:999px;background:var(--white);color:var(--maroon);box-shadow:0 6px 0 #b9a27a,0 10px 20px rgba(0,0,0,.35);transition:transform .08s,box-shadow .08s,background .2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn:hover{background:#fff6dd}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #b9a27a,0 4px 10px rgba(0,0,0,.35)}
+.btn.gold{background:var(--gold);color:#2a1300;box-shadow:0 6px 0 #8a6a22,0 10px 20px rgba(0,0,0,.35)}
+.btn.gold:active{box-shadow:0 1px 0 #8a6a22}
+.btn.small{font-size:14px;padding:11px 18px}
+.mute{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:system-ui,Arial,sans-serif;opacity:.8}
+
+/* ===== Sections ===== */
+.wrap{max-width:1100px;margin:46px auto;padding:0 16px;display:grid;grid-template-columns:1.25fr 1fr;gap:26px;text-align:left}
+.card{background:var(--white);color:var(--ink);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.35);overflow:hidden}
+.card h2{font-size:24px;text-transform:uppercase;color:var(--maroon);letter-spacing:.5px}
+.card .hd{padding:16px 18px;border-bottom:1px solid #eadfdf;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{font-family:system-ui,Arial,sans-serif;font-size:12px;background:#f3e9e9;color:var(--maroon);padding:4px 10px;border-radius:999px;font-weight:700;white-space:nowrap}
+
+/* Board */
+.board .bar{background:var(--maroon);color:#fff;font-family:system-ui,Arial,sans-serif;font-size:12px;display:flex;gap:16px;padding:8px 18px;overflow:hidden;white-space:nowrap}
+.board .bar b{color:var(--gold)}
+#threads{list-style:none;height:470px;overflow:hidden;position:relative;font-family:system-ui,-apple-system,Arial,sans-serif;-webkit-mask:linear-gradient(#000 82%,transparent);mask:linear-gradient(#000 82%,transparent)}
+.thread{display:grid;grid-template-columns:52px 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid #f0e6e6;animation:slidein .55s cubic-bezier(.2,1.2,.4,1)}
+@keyframes slidein{from{opacity:0;transform:translateY(-30px);background:#fff3c8}to{opacity:1;transform:none;background:transparent}}
+.votes{text-align:center;color:var(--maroon);font-weight:800;font-size:15px;line-height:1.1}
+.votes .arr{display:block;font-size:12px;opacity:.6}
+.votes.bump{animation:bump .4s}
+@keyframes bump{50%{transform:scale(1.3);color:#c18b14}}
+.t-title{font-weight:700;color:#1d0c0c;font-size:15px;line-height:1.3}
+.t-title .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;margin-right:6px;vertical-align:2px;background:var(--maroon);color:#fff}
+.tag.hot{background:#d9480f}.tag.panic{background:#5f3dc4}.tag.ins{background:#c18b14;color:#2a1300}.tag.locked{background:#555}
+.t-meta{font-size:12px;color:#7d6a6a;margin-top:3px}
+.t-meta .h{color:var(--maroon);font-weight:700}
+.t-reply{font-size:13px;color:#4a3a3a;margin-top:4px;font-style:italic}
+
+/* Hot take */
+.take{padding:20px 18px 22px}
+#takeOut{min-height:120px;font-size:clamp(20px,2.4vw,26px);line-height:1.3;color:#1d0c0c;padding:18px;border-radius:12px;background:repeating-linear-gradient(-45deg,#fff8ea 0 14px,#fff3dc 14px 28px);border:2px dashed var(--gold);position:relative}
+#takeOut .temp{position:absolute;right:10px;bottom:8px;font-family:system-ui,Arial,sans-serif;font-size:12px;color:#b5480f;font-weight:800}
+#takeOut.fresh{animation:sizzle .5s}
+@keyframes sizzle{0%{transform:scale(.97) rotate(-.6deg)}50%{transform:scale(1.02) rotate(.6deg)}100%{transform:none}}
+.take .row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.rules{padding:16px 18px 20px;font-family:system-ui,Arial,sans-serif}
+.rules ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;font-size:15px;color:#2a1a1a;margin-top:10px}
+
+/* Membership */
+.member{max-width:1100px;margin:0 auto 46px;padding:0 16px}
+.member .card{display:grid;grid-template-columns:1fr 1.4fr;text-align:left}
+.member .form{padding:24px 22px}
+.member p{font-family:system-ui,Arial,sans-serif;color:#4a3a3a;font-size:15px;margin:8px 0 16px}
+.member label{font-family:system-ui,Arial,sans-serif;font-weight:700;font-size:13px;color:var(--maroon);text-transform:uppercase;letter-spacing:1px}
+.member input{width:100%;margin:6px 0 14px;padding:14px;font-size:18px;border:2px solid #e0cccc;border-radius:10px;font-family:system-ui,Arial,sans-serif}
+.member input:focus{outline:none;border-color:var(--maroon)}
+.member .preview{background:#1b2213;padding:18px;display:flex;align-items:center;justify-content:center}
+#cardCanvas{width:100%;height:auto;border-radius:14px;box-shadow:0 14px 36px rgba(0,0,0,.6)}
+.note{font-size:12px;color:#8a7777;font-family:system-ui,Arial,sans-serif;margin-top:10px}
+
+footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:26px 16px 40px;line-height:1.7}
+
+/* Particles + rising tide */
+#fx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:50}
+.toast{position:fixed;left:50%;top:18%;transform:translate(-50%,0) scale(.5);font-family:Georgia,serif;font-weight:900;font-size:clamp(48px,12vw,120px);color:var(--gold);text-shadow:0 6px 0 #2a0000,0 0 30px rgba(0,0,0,.5);pointer-events:none;z-index:60;opacity:0}
+.toast.go{animation:toast 1s ease-out forwards}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,20px) scale(.4) rotate(-8deg)}25%{opacity:1;transform:translate(-50%,0) scale(1.1) rotate(3deg)}100%{opacity:0;transform:translate(-50%,-60px) scale(1) rotate(0)}}
+
+@media (max-width:820px){
+  .wrap{grid-template-columns:1fr}
+  .member .card{grid-template-columns:1fr}
+  #threads{height:400px}
+  .rules ul{grid-template-columns:1fr}
+  .sign{font-size:10px;padding:6px 8px;top:12px;left:10px}
+  .sign.r{right:10px}
+  .floaty{top:16%;width:86%}
+  .controls{gap:16px}
+  .btn{font-size:16px;padding:14px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;animation-iteration-count:1!important;transition:none!important}
+}
 </style>
 </head>
 <body>
-  <header>
-    <div class="kicker">Breaking News from Aggieland</div>
-    <h1>Welcome to<br>Billy's Cesspool</h1>
-    <p class="sub">Coach called it out. Billy pulled up a chair.</p>
-  </header>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="toast" id="toast" aria-hidden="true">WHOOP!</div>
 
-  <div class="photo">
-    <img src="billy.webp" alt="Billy in his Texas A&amp;M cap, smiling">
-    <p class="caption">The Cesspool's proprietor, unbothered.</p>
+<header>
+  <div class="kicker"><span class="live"></span>Breaking News from Aggieland</div>
+  <h1>Welcome to<br><span class="gold">Billy's</span> Cesspool</h1>
+  <p class="sub">Coach called it a cesspool. Billy pulled up a chair.</p>
+  <p class="sub2">Water temp: lukewarm takes &middot; Visibility: zero &middot; Vibes: immaculate</p>
+</header>
+
+<section class="stage" aria-label="The Cesspool">
+  <div class="sky"></div>
+  <div class="tile"></div>
+  <div class="sign">Lifeguard on duty<small>Always. Since forever.</small></div>
+  <div class="sign r">No running<small>Takes only. No diving into facts.</small></div>
+  <div class="floaty">
+    <div class="frame"><img src="billy.webp" alt="Billy in his Texas A&amp;M cap, smiling" width="1672" height="941"></div>
+    <div class="plate">Proprietor<small>Est. Oct 10, 2026</small></div>
   </div>
+  <div class="ring" aria-hidden="true"></div>
+  <canvas id="water" aria-hidden="true"></canvas>
+</section>
 
-  <section class="board">
-    <h2>Cesspool House Rules</h2>
-    <ul>
-      <li>🧢 Cap stays on</li>
-      <li>😏 Smile stays on</li>
-      <li>📝 Every take is a hot take</li>
-      <li>🏈 Gig 'em, always</li>
-    </ul>
+<section class="controls" aria-label="Cesspool controls">
+  <div class="meter">
+    <div class="gauge" role="meter" aria-label="Cesspool depth" aria-valuemin="0" aria-valuemax="100" id="gauge"><div class="fill" id="fill"></div><div class="ticks"></div></div>
+    <div>
+      <h3>Cesspool Depth Meter</h3>
+      <div class="depth"><span id="depth">0.0</span> ft</div>
+      <div class="level" id="level">Dry. Suspiciously dry.</div>
+      <div class="mine">You've jumped in <b id="count">0</b> times. Saved only in your browser.</div>
+    </div>
+  </div>
+  <div>
+    <div class="btns">
+      <button class="btn" id="jump">🫧 Jump In</button>
+      <button class="btn gold" id="whoop">📣 Whoop!</button>
+    </div>
+    <div style="margin-top:12px"><button class="mute" id="mute" aria-pressed="false">🔊 Sound on</button></div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="card board" aria-label="Cesspool Message Board">
+    <div class="hd"><h2>💬 Cesspool Message Board</h2><span class="pill"><span id="online">1,912</span> Ags online</span></div>
+    <div class="bar"><span>Premium: <b>Moist</b></span><span>Forum mood: <b id="mood">Spiraling</b></span><span>Moderators: <b>Treading water</b></span></div>
+    <ul id="threads" aria-live="off"></ul>
   </section>
 
-  <p>Aggies currently swimming in the Cesspool:</p>
-  <div id="count">0</div>
-  <button class="btn" onclick="whoop()">Jump In! Whoop!</button>
+  <div style="display:grid;gap:26px;align-content:start">
+    <section class="card" aria-label="Hot Take Generator">
+      <div class="hd"><h2>🔥 Hot Take Generator</h2><span class="pill">Peer reviewed by nobody</span></div>
+      <div class="take">
+        <div id="takeOut" aria-live="polite">Press the button. Take responsibility for nothing.</div>
+        <div class="row">
+          <button class="btn gold small" id="takeBtn">Generate a hot take</button>
+          <button class="btn small" id="copyTake">Copy</button>
+        </div>
+      </div>
+    </section>
+    <section class="card" aria-label="House Rules">
+      <div class="hd"><h2>📋 House Rules</h2></div>
+      <div class="rules">
+        <ul>
+          <li>🧢 Cap stays on</li>
+          <li>😏 Smile stays on</li>
+          <li>🔥 Every take is a hot take</li>
+          <li>🏊 No lifeguard, just vibes</li>
+          <li>📉 Panic is a renewable resource</li>
+          <li>🏈 Gig 'em, always</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
 
-  <footer>Parody site for fun. Not affiliated with Texas A&amp;M, TexAgs, Coach Elko, or Billy. Gig 'em.</footer>
+<section class="member" aria-label="Membership card generator">
+  <div class="card">
+    <div class="form">
+      <h2>🪪 Get Your Membership Card</h2>
+      <p>Make it official. Type your message board handle and get a card certifying you as a member in good standing of the Cesspool. Post it. Text it to your group chat. Laminate it.</p>
+      <label for="handle">Your handle</label>
+      <input id="handle" maxlength="22" placeholder="e.g. PanicButtonPresser" autocomplete="off" spellcheck="false">
+      <div class="btns" style="justify-content:flex-start">
+        <button class="btn gold small" id="dl">⬇ Download card</button>
+        <button class="btn small" id="share">Share</button>
+      </div>
+      <div class="note" id="cardNote">Card is drawn right here in your browser. Nothing gets uploaded anywhere.</div>
+    </div>
+    <div class="preview"><canvas id="cardCanvas" width="1200" height="720"></canvas></div>
+  </div>
+</section>
+
+<footer>
+  Parody site for fun. Not affiliated with Texas A&amp;M, TexAgs, Coach Elko, or Billy. Gig 'em.<br>
+  All message board posts and hot takes are randomly generated nonsense from made-up users. No cookies, no tracking, no kidding.
+</footer>
 
 <script>
-  let n = Number(localStorage.getItem('whoops') || 0);
-  const c = document.getElementById('count');
-  c.textContent = n;
-  function whoop(){ n++; localStorage.setItem('whoops', n); c.textContent = n; }
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const rand = a => a[Math.floor(Math.random() * a.length)];
+const ri = (a, b) => Math.floor(a + Math.random() * (b - a + 1));
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+
+/* ---------------- Audio (Web Audio, all synthesized) ---------------- */
+let actx = null, muted = store.get('muted', '0') === '1';
+const muteBtn = $('#mute');
+const paintMute = () => { muteBtn.textContent = muted ? '🔇 Sound off' : '🔊 Sound on'; muteBtn.setAttribute('aria-pressed', String(muted)); };
+paintMute();
+muteBtn.addEventListener('click', () => { muted = !muted; store.set('muted', muted ? '1' : '0'); paintMute(); });
+function ac() {
+  if (muted) return null;
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return null;
+  if (!actx) actx = new AC();
+  if (actx.state === 'suspended') actx.resume();
+  return actx;
+}
+function whoopSound() {
+  const c = ac(); if (!c) return;
+  const t = c.currentTime;
+  [0, 0.32].forEach((off, i) => {
+    const o = c.createOscillator(), g = c.createGain(), o2 = c.createOscillator(), g2 = c.createGain();
+    o.type = 'sawtooth'; o2.type = 'square';
+    const f0 = 260 + i * 30, f1 = 760 + i * 60;
+    o.frequency.setValueAtTime(f0, t + off); o.frequency.exponentialRampToValueAtTime(f1, t + off + 0.24);
+    o2.frequency.setValueAtTime(f0 * 1.005, t + off); o2.frequency.exponentialRampToValueAtTime(f1 * 1.005, t + off + 0.24);
+    const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2200;
+    g.gain.setValueAtTime(0.0001, t + off); g.gain.exponentialRampToValueAtTime(0.22, t + off + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, t + off + 0.3);
+    g2.gain.value = 0.35;
+    o.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(g); g.connect(c.destination);
+    o.start(t + off); o2.start(t + off); o.stop(t + off + 0.32); o2.stop(t + off + 0.32);
+  });
+}
+function splashSound(big) {
+  const c = ac(); if (!c) return;
+  const t = c.currentTime, len = 0.7;
+  const buf = c.createBuffer(1, c.sampleRate * len, c.sampleRate), d = buf.getChannelData(0);
+  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2.4);
+  const n = c.createBufferSource(); n.buffer = buf;
+  const bp = c.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.setValueAtTime(1800, t); bp.frequency.exponentialRampToValueAtTime(400, t + len); bp.Q.value = 0.7;
+  const g = c.createGain(); g.gain.setValueAtTime(big ? 0.9 : 0.6, t); g.gain.exponentialRampToValueAtTime(0.001, t + len);
+  n.connect(bp); bp.connect(g); g.connect(c.destination); n.start(t);
+  // bloop bloop bubbles
+  for (let k = 0; k < 4; k++) {
+    const o = c.createOscillator(), og = c.createGain(), s = t + 0.12 + k * 0.09 + Math.random() * 0.05;
+    o.type = 'sine'; o.frequency.setValueAtTime(300 + Math.random() * 300, s); o.frequency.exponentialRampToValueAtTime(900 + Math.random() * 500, s + 0.07);
+    og.gain.setValueAtTime(0.0001, s); og.gain.exponentialRampToValueAtTime(0.15, s + 0.01); og.gain.exponentialRampToValueAtTime(0.0001, s + 0.09);
+    o.connect(og); og.connect(c.destination); o.start(s); o.stop(s + 0.1);
+  }
+}
+
+/* ---------------- Water canvas: waves + bubbles ---------------- */
+const wc = $('#water'), wx = wc.getContext('2d');
+let W = 0, H = 0, dpr = 1, bubbles = [], surge = 0;
+function sizeWater() {
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const r = wc.getBoundingClientRect(); W = r.width; H = r.height;
+  wc.width = Math.round(W * dpr); wc.height = Math.round(H * dpr);
+  wx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+function addBubble(x, burst) {
+  bubbles.push({ x: x ?? Math.random() * W, y: H + 6, r: burst ? 2 + Math.random() * 7 : 1.5 + Math.random() * 4.5,
+    vy: 0.35 + Math.random() * (burst ? 1.8 : 0.8), wob: Math.random() * 6.28, top: H * (0.12 + Math.random() * 0.2) });
+}
+function surfaceY(x, t, layer) {
+  const base = H * (0.16 + layer * 0.09);
+  return base + Math.sin(x * 0.012 + t * (1.1 + layer * 0.3) + layer) * (7 + surge * 14)
+              + Math.sin(x * 0.031 - t * 1.7 + layer * 2) * (3 + surge * 6);
+}
+const layers = [
+  ['rgba(108,128,58,.55)', 'rgba(60,74,34,.75)'],
+  ['rgba(84,102,44,.75)', 'rgba(44,55,26,.9)'],
+  ['rgba(62,77,34,.95)', 'rgba(30,38,18,1)']
+];
+let last = performance.now();
+function drawWater(now) {
+  const t = now / 1000, dt = Math.min(50, now - last) / 16.7; last = now;
+  wx.clearRect(0, 0, W, H);
+  layers.forEach((col, i) => {
+    const g = wx.createLinearGradient(0, H * 0.1, 0, H); g.addColorStop(0, col[0]); g.addColorStop(1, col[1]);
+    wx.fillStyle = g; wx.beginPath(); wx.moveTo(0, H);
+    for (let x = 0; x <= W + 8; x += 8) wx.lineTo(x, surfaceY(x, t, i));
+    wx.lineTo(W, H); wx.closePath(); wx.fill();
+  });
+  // surface scum sparkle
+  wx.strokeStyle = 'rgba(214,178,94,.35)'; wx.lineWidth = 2; wx.beginPath();
+  for (let x = 0; x <= W + 8; x += 8) { const y = surfaceY(x, t, 0); x ? wx.lineTo(x, y) : wx.moveTo(x, y); }
+  wx.stroke();
+  // lily-pad-ish floating debris
+  for (let k = 0; k < 4; k++) {
+    const x = ((k * 0.27 + t * 0.012 * (k % 2 ? 1 : -1)) % 1 + 1) % 1 * W, y = surfaceY(x, t, 1) + 2;
+    wx.fillStyle = 'rgba(122,150,62,.85)'; wx.beginPath(); wx.ellipse(x, y, 14, 5, 0, 0.3, Math.PI * 2 - 0.3); wx.fill();
+  }
+  if (!reduced && Math.random() < 0.18 + surge * 0.6) addBubble();
+  bubbles = bubbles.filter(b => {
+    b.y -= b.vy * dt; b.wob += 0.06 * dt; const x = b.x + Math.sin(b.wob) * 3;
+    wx.beginPath(); wx.arc(x, b.y, b.r, 0, 6.283);
+    wx.fillStyle = 'rgba(190,210,140,.18)'; wx.fill(); wx.strokeStyle = 'rgba(220,235,180,.6)'; wx.lineWidth = 1; wx.stroke();
+    wx.beginPath(); wx.arc(x - b.r * 0.35, b.y - b.r * 0.35, b.r * 0.25, 0, 6.283); wx.fillStyle = 'rgba(255,255,255,.6)'; wx.fill();
+    return b.y > b.top;
+  });
+  surge *= 0.975;
+  requestAnimationFrame(drawWater);
+}
+sizeWater(); addEventListener('resize', () => { sizeWater(); sizeFx(); });
+for (let i = 0; i < 25; i++) { addBubble(); bubbles[i].y = H * (0.3 + Math.random() * 0.7); }
+requestAnimationFrame(drawWater);
+
+/* ---------------- Particle FX overlay ---------------- */
+const fx = $('#fx'), fctx = fx.getContext('2d'); let parts = [], fxRunning = false;
+function sizeFx() { const d = Math.min(devicePixelRatio || 1, 2); fx.width = innerWidth * d; fx.height = innerHeight * d; fctx.setTransform(d, 0, 0, d, 0, 0); }
+sizeFx();
+function burst(x, y, kind) {
+  const n = reduced ? 8 : kind === 'whoop' ? 46 : 60;
+  for (let i = 0; i < n; i++) {
+    const a = kind === 'whoop' ? Math.random() * 6.283 : -Math.PI / 2 + (Math.random() - 0.5) * 1.9;
+    const s = kind === 'whoop' ? 3 + Math.random() * 7 : 5 + Math.random() * 10;
+    parts.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 1, kind,
+      r: kind === 'whoop' ? 3 + Math.random() * 4 : 3 + Math.random() * 6, spin: Math.random() * 6,
+      c: kind === 'whoop' ? rand(['#d6b25e', '#ffffff', '#f3d98b', '#500000']) : rand(['#7f9a3e', '#9bb556', '#5a6d2f', '#c9dba0']) });
+  }
+  if (!fxRunning) { fxRunning = true; requestAnimationFrame(stepFx); }
+}
+function stepFx() {
+  fctx.clearRect(0, 0, innerWidth, innerHeight);
+  parts = parts.filter(p => {
+    p.vy += p.kind === 'whoop' ? 0.12 : 0.35; p.vx *= 0.985; p.x += p.vx; p.y += p.vy; p.life -= 0.012; p.spin += 0.2;
+    fctx.globalAlpha = Math.max(0, p.life); fctx.fillStyle = p.c;
+    if (p.kind === 'whoop') { fctx.save(); fctx.translate(p.x, p.y); fctx.rotate(p.spin); fctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r); fctx.restore(); }
+    else { fctx.beginPath(); fctx.ellipse(p.x, p.y, p.r * 0.75, p.r, Math.atan2(p.vy, p.vx) + 1.57, 0, 6.283); fctx.fill(); }
+    return p.life > 0 && p.y < innerHeight + 40;
+  });
+  fctx.globalAlpha = 1;
+  if (parts.length) requestAnimationFrame(stepFx); else { fxRunning = false; fctx.clearRect(0, 0, innerWidth, innerHeight); }
+}
+const toast = $('#toast');
+function showToast(txt) { toast.textContent = txt; toast.classList.remove('go'); void toast.offsetWidth; toast.classList.add('go'); }
+
+/* ---------------- Depth meter ---------------- */
+let jumps = Number(store.get('jumps', store.get('whoops', 0))) || 0;
+const levels = [
+  [0, 'Dry. Suspiciously dry.'], [1, 'Ankle deep. Testing the waters.'], [5, 'Knee deep in takes.'],
+  [12, 'Waist deep. Already refreshing the board.'], [25, 'Treading water. Posting through it.'],
+  [45, 'Fully submerged. Has a strong opinion on the long snapper.'], [75, 'Bottom-dweller. Knows every insider rumor.'],
+  [120, 'Cesspool Lifer. Has a reserved pool noodle.'], [200, 'Legend of the Deep End. The water fears you.']
+];
+function paintDepth(bump) {
+  const pct = Math.min(100, 4 + Math.log10(1 + jumps) * 42);
+  $('#fill').style.height = pct + '%';
+  $('#gauge').setAttribute('aria-valuenow', String(Math.round(pct)));
+  $('#depth').textContent = (jumps * 0.5).toFixed(1);
+  $('#count').textContent = jumps.toLocaleString();
+  let lv = levels[0][1]; for (const [n, l] of levels) if (jumps >= n) lv = l;
+  $('#level').textContent = lv;
+  if (bump) { const d = $('#depth'); d.animate([{ transform: 'scale(1.25)' }, { transform: 'scale(1)' }], { duration: 300 }); }
+}
+paintDepth(false);
+function centerOf(el) { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; }
+$('#jump').addEventListener('click', e => {
+  jumps++; store.set('jumps', jumps); paintDepth(true);
+  splashSound(jumps % 10 === 0); surge = Math.min(1.4, surge + 0.6);
+  const wr = wc.getBoundingClientRect();
+  for (let i = 0; i < 18; i++) addBubble(W * (0.3 + Math.random() * 0.4), true);
+  const sx = wr.top < innerHeight && wr.bottom > 0 ? wr.left + wr.width / 2 : centerOf(e.currentTarget)[0];
+  const sy = wr.top < innerHeight && wr.bottom > 0 ? wr.top + wr.height * 0.25 : centerOf(e.currentTarget)[1];
+  burst(sx, sy, 'splash');
+  if (jumps % 10 === 0) showToast('CANNONBALL!');
+});
+$('#whoop').addEventListener('click', e => {
+  whoopSound(); const [x, y] = centerOf(e.currentTarget); burst(x, y, 'whoop'); showToast('WHOOP!');
+});
+
+/* ---------------- Message board ---------------- */
+const handles = ['MaroonMisterTX', 'BonfireBuilder05', 'KyleFieldKid', 'Ol_Army_Dad', 'TwelfthManTim', 'Ag03AndAlways',
+  'WhoopWhoopWhoop', 'CorpsCadet_Ret', 'MidnightYellPro', 'PanicButtonPresser', 'GigEmGrandpa', 'BrazosValleyBubba',
+  'HowdyHank', 'SidelineSpecialist', 'RecruitingGuru_No1', 'ScoreboardWatcher', 'BucEesBrisket', 'RecliningAg',
+  'FishCampCounselor', 'Ring_Dunk_Randy', 'NorthgateNostalgia', 'SilverTaps_Steve', 'ElephantWalkEd', 'MaroonOut4Ever',
+  'TakeMachine_99', 'LurkerSince2004', 'PoolNoodleAg', 'DeepEndDweller', 'TrustMeBroAg', 'FirstTimePosterLongTimeLurker'];
+const threads = [
+  ['hot', 'Fire everyone'], ['hot', 'Fire everyone (including the guy who runs the scoreboard)'], ['panic', 'Is it time to panic? (Week 6 edition)'],
+  ['ins', 'Official Billy Insider Info thread'], ['ins', 'I have it on good authority...'], ['ins', "My cousin's barber's neighbor says big things are coming"],
+  ['', 'Ranking every play call from Saturday from worst to also worst'], ['', 'Re: Re: Re: Re: Fire everyone'],
+  ['', 'Moved my recliner two inches to the left. Will report back next Saturday.'], ['', 'Is the Cesspool heated? Asking for a friend.'],
+  ['', "Who had 'cesspool' on their 2026 bingo card?"], ['', 'Cesspool merch thread (I want a maroon pool noodle)'],
+  ['locked', 'Calm, rational discussion thread'], ['hot', 'This is the year. (Posted every year since 1998)'],
+  ['', 'Stat nerd thread: our 3rd down % vs. my sanity'], ['hot', 'Hot take: we should have punted on 1st down'],
+  ['ins', '5-star recruit spotted at a Buc-ee\'s. Bought a brisket sandwich. Read into it.'], ['', 'Weather thread: 100% chance of takes'],
+  ['', 'Already booked my hotel for the title game. Refundable. Probably.'], ['panic', 'Panic level 7. Recalibrating.'],
+  ['panic', 'Starting a fundraiser for the TV remote I threw'], ['', 'Did anyone else yell at the TV or just my entire street?'],
+  ['', 'The Cesspool is a vibe and I will not be taking questions'], ['', 'Mods please do something (no idea what)'],
+  ['panic', 'Should I sell my season tickets? (I do not have season tickets)'], ['hot', 'Bring back the leather helmets'],
+  ['ins', 'Hearing rumblings. Can\'t say more. Okay one more thing...'], ['', 'Pool rules thread: who brought the floaties?'],
+  ['', 'Unpopular opinion: the band won the game. Football is TBD.'], ['panic', 'Is it time to panic? (Week 6 edition) (Part 2)'],
+  ['', 'Poll: How deep are you in the Cesspool right now?'], ['hot', 'If we just score more points than them we win. Thoughts?'],
+  ['', 'Rate my tailgate setup (it is a lawn chair in a kiddie pool)'], ['ins', 'Insider info: the water is, in fact, wet'],
+  ['', 'Reading the board at 2am is self-care, change my mind'], ['hot', 'Every coordinator should have to post here first'],
+  ['', 'Just here for the vibes and the snacks'], ['panic', 'Doom-scrolling update: still dooming'],
+  ['', 'PSA: Saturday exists again next week'], ['hot', 'We should recruit Reveille at linebacker']
+];
+const replies = ['first', 'This.', 'Bump.', 'Source?', 'Trust me bro.', 'Ole Army would never.', 'Book it.', "Gig 'em regardless.",
+  '[deleted by moderator: too reasonable]', 'Saved for later panic.', 'Sir, this is a cesspool.', 'Called it in August.',
+  'Bold take for a Tuesday.', 'I agree with all of this and none of it.', "Can't wait to be wrong about this next week.",
+  'Stopped reading at the title. Agree.', 'Somebody get this man a pool noodle.', '10/10 take. Would panic again.',
+  'Screenshotting for the receipts thread.', "I'm not crying, the cesspool splashed me."];
+const moods = ['Spiraling', 'Cautiously Delusional', 'Unhinged', 'Recalibrating', 'Hopeful (temporarily)', 'Doom Mode', 'Whooping', 'Re-spiraling'];
+const ul = $('#threads');
+let tIdx = Math.floor(Math.random() * threads.length);
+const order = threads.map((_, i) => i).sort(() => Math.random() - 0.5);
+function makeThread() {
+  const [tag, title] = threads[order[tIdx++ % order.length]];
+  const li = document.createElement('li'); li.className = 'thread';
+  const v = document.createElement('div'); v.className = 'votes';
+  const votes = ri(3, 480);
+  v.innerHTML = '<span class="arr">▲</span><span class="n"></span>'; v.querySelector('.n').textContent = votes; v.dataset.n = votes;
+  const body = document.createElement('div');
+  const tt = document.createElement('div'); tt.className = 't-title';
+  if (tag) { const s = document.createElement('span'); s.className = 'tag ' + tag; s.textContent = { hot: 'Hot', panic: 'Panic', ins: 'Insider', locked: 'Locked' }[tag]; tt.appendChild(s); }
+  tt.appendChild(document.createTextNode(title));
+  const meta = document.createElement('div'); meta.className = 't-meta';
+  const h = document.createElement('span'); h.className = 'h'; h.textContent = rand(handles);
+  meta.append(h, document.createTextNode(` · just now · ${ri(2, 900)} replies · ${ri(80, 40000).toLocaleString()} views`));
+  const rep = document.createElement('div'); rep.className = 't-reply';
+  rep.textContent = tag === 'locked' ? 'Thread locked after 4 posts.' : `↳ ${rand(handles)}: ${rand(replies)}`;
+  body.append(tt, meta, rep); li.append(v, body);
+  return li;
+}
+function pushThread() {
+  ul.prepend(makeThread());
+  while (ul.children.length > 14) ul.lastElementChild.remove();
+}
+for (let i = 0; i < 8; i++) { const li = makeThread(); li.style.animation = 'none'; li.querySelector('.t-meta').lastChild.textContent = li.querySelector('.t-meta').lastChild.textContent.replace('just now', `${ri(2, 59)}m ago`); ul.appendChild(li); }
+setInterval(pushThread, reduced ? 6000 : 2600);
+setInterval(() => {
+  const vs = ul.querySelectorAll('.votes'); if (!vs.length) return;
+  for (let k = 0; k < 3; k++) {
+    const v = vs[Math.floor(Math.random() * vs.length)]; const n = Number(v.dataset.n) + ri(1, 12); v.dataset.n = n;
+    v.querySelector('.n').textContent = n; v.classList.remove('bump'); void v.offsetWidth; v.classList.add('bump');
+  }
+}, 700);
+let online = 1912;
+setInterval(() => { online = Math.max(400, online + ri(-25, 40)); $('#online').textContent = online.toLocaleString(); }, 1500);
+setInterval(() => { $('#mood').textContent = rand(moods); }, 5000);
+
+/* ---------------- Hot take generator ---------------- */
+const openers = ['Unpopular opinion:', 'Hear me out:', 'I said this in August:', 'Book it:', 'Nobody wants to admit it, but',
+  'Trust me bro:', 'Long-time lurker, first post:', 'Respectfully,', 'Not overreacting, but', 'Insider info (my gut):'];
+const subjects = ['the backup long snapper', 'the Twelfth Man', 'Reveille', 'the band', 'my uncle in College Station', 'the offensive line',
+  'the concession stand nachos', 'the guy in section 112 with the cowbell he is not supposed to have', 'the third-string kicker',
+  'the water boy', 'our mascot costume budget', 'the yell leaders', 'the scoreboard operator', 'the turf at Kyle Field',
+  'whoever picks the pregame playlist', 'the punter', 'my lucky socks', 'the student section'];
+const preds = ['should be calling the plays', 'is the most underrated player in America', 'deserves a Heisman vote',
+  'has been the problem all along', 'is secretly the key to winning it all', 'needs to start immediately',
+  'should be in charge of clock management', 'is the only thing standing between us and a natty', 'would beat any team in the SEC by 40',
+  'should get a statue outside Kyle Field', 'needs a seven-year contract extension today', 'has been criminally underused'];
+const tails = ['And I\'m not taking questions.', 'Anyone who disagrees has never watched film.', 'Panic meter: 11/10.',
+  'This is not an overreaction.', 'Source: my gut.', 'Screenshot this.', 'Fire everyone else.', 'Gig \'em.',
+  'I will not be elaborating.', 'Write it down. In pen.', 'Mods, pin this.', 'Posted from the deep end.'];
+let lastTake = '';
+function genTake() {
+  let s;
+  do { s = `${rand(openers)} ${rand(subjects)} ${rand(preds)}. ${rand(tails)}`; } while (s === lastTake);
+  lastTake = s; s = s[0].toUpperCase() + s.slice(1);
+  const o = $('#takeOut'); o.textContent = s;
+  const tmp = document.createElement('span'); tmp.className = 'temp'; tmp.textContent = `🌡 ${ri(212, 9001)}°F`; o.appendChild(tmp);
+  o.classList.remove('fresh'); void o.offsetWidth; o.classList.add('fresh');
+  return s;
+}
+$('#takeBtn').addEventListener('click', e => { genTake(); const [x, y] = centerOf(e.currentTarget); burst(x, y, 'whoop'); });
+$('#copyTake').addEventListener('click', async e => {
+  const b = e.currentTarget; const txt = lastTake ? lastTake + ' (via billyscesspool.me)' : '';
+  if (!txt) { genTake(); return; }
+  try { await navigator.clipboard.writeText(txt); b.textContent = 'Copied!'; } catch (_) { b.textContent = 'Copy failed'; }
+  setTimeout(() => b.textContent = 'Copy', 1400);
+});
+
+/* ---------------- Membership card ---------------- */
+const cv = $('#cardCanvas'), cx = cv.getContext('2d');
+const photo = new Image(); photo.src = 'billy.webp';
+const memberNo = String(ri(1, 99999)).padStart(5, '0');
+function rr(x, y, w, h, r) { cx.beginPath(); cx.moveTo(x + r, y); cx.arcTo(x + w, y, x + w, y + h, r); cx.arcTo(x + w, y + h, x, y + h, r); cx.arcTo(x, y + h, x, y, r); cx.arcTo(x, y, x + w, y, r); cx.closePath(); }
+function fitText(txt, max, size, font) { let s = size; do { cx.font = `${font} ${s}px Georgia, serif`; s -= 2; } while (cx.measureText(txt).width > max && s > 18); }
+function drawCard() {
+  const name = ($('#handle').value.trim() || 'Your Handle Here').slice(0, 22);
+  const Wc = cv.width, Hc = cv.height;
+  cx.clearRect(0, 0, Wc, Hc);
+  const g = cx.createLinearGradient(0, 0, Wc, Hc); g.addColorStop(0, '#6a0a0a'); g.addColorStop(1, '#360000');
+  rr(0, 0, Wc, Hc, 40); cx.fillStyle = g; cx.fill();
+  // murky water stripe at bottom
+  cx.save(); rr(0, 0, Wc, Hc, 40); cx.clip();
+  const wg = cx.createLinearGradient(0, Hc - 150, 0, Hc); wg.addColorStop(0, '#5a6d2f'); wg.addColorStop(1, '#26301a');
+  cx.fillStyle = wg; cx.beginPath(); cx.moveTo(0, Hc);
+  for (let x = 0; x <= Wc; x += 10) cx.lineTo(x, Hc - 120 + Math.sin(x / 55) * 12 + Math.sin(x / 23) * 4);
+  cx.lineTo(Wc, Hc); cx.fill();
+  cx.fillStyle = 'rgba(220,235,180,.45)';
+  [[90, 650, 10], [140, 620, 6], [1050, 640, 12], [1110, 600, 7], [960, 690, 6], [700, 655, 5]].forEach(([x, y, r]) => { cx.beginPath(); cx.arc(x, y, r, 0, 6.283); cx.fill(); });
+  cx.restore();
+  // borders
+  rr(14, 14, Wc - 28, Hc - 28, 30); cx.lineWidth = 6; cx.strokeStyle = '#d6b25e'; cx.stroke();
+  rr(28, 28, Wc - 56, Hc - 56, 22); cx.lineWidth = 2; cx.strokeStyle = 'rgba(214,178,94,.5)'; cx.stroke();
+  // photo in circle
+  const pcx = 260, pcy = 330, pr = 190;
+  cx.save(); cx.beginPath(); cx.arc(pcx, pcy, pr, 0, 6.283); cx.clip();
+  if (photo.complete && photo.naturalWidth) {
+    const fx0 = 718, fy0 = 400, s = 400; // face-centered crop of source
+    cx.drawImage(photo, fx0 - s, Math.max(0, fy0 - s), s * 2, s * 2, pcx - pr, pcy - pr, pr * 2, pr * 2);
+  } else { cx.fillStyle = '#ddd'; cx.fillRect(pcx - pr, pcy - pr, pr * 2, pr * 2); }
+  cx.restore();
+  cx.beginPath(); cx.arc(pcx, pcy, pr, 0, 6.283); cx.lineWidth = 10; cx.strokeStyle = '#fff'; cx.stroke();
+  cx.beginPath(); cx.arc(pcx, pcy, pr + 9, 0, 6.283); cx.lineWidth = 4; cx.strokeStyle = '#d6b25e'; cx.stroke();
+  // proprietor plate under photo
+  rr(pcx - 120, pcy + pr - 18, 240, 46, 8); const pg = cx.createLinearGradient(0, pcy + pr - 18, 0, pcy + pr + 28); pg.addColorStop(0, '#e9cf8c'); pg.addColorStop(1, '#b88f3c'); cx.fillStyle = pg; cx.fill();
+  cx.fillStyle = '#3a1d00'; cx.font = '900 22px system-ui, Arial, sans-serif'; cx.textAlign = 'center'; cx.fillText('P R O P R I E T O R', pcx, pcy + pr + 13);
+  // text block
+  cx.textAlign = 'left'; const tx = 500;
+  cx.fillStyle = '#d6b25e'; cx.font = '700 26px system-ui, Arial, sans-serif'; cx.fillText("BILLY'S CESSPOOL  ·  EST. 2026", tx, 108);
+  cx.fillStyle = '#fff'; cx.font = 'bold 64px Georgia, serif'; cx.fillText('CERTIFIED', tx, 190);
+  cx.fillText('CESSPOOL MEMBER', tx, 258);
+  cx.fillStyle = 'rgba(255,255,255,.7)'; cx.font = '600 22px system-ui, Arial, sans-serif'; cx.fillText('THIS CERTIFIES THAT', tx, 320);
+  fitText(name, 640, 64, 'italic bold'); cx.fillStyle = '#d6b25e'; cx.fillText(name, tx, 390);
+  cx.fillStyle = 'rgba(255,255,255,.35)'; cx.fillRect(tx, 408, 640, 2);
+  cx.fillStyle = '#fff'; cx.font = '22px system-ui, Arial, sans-serif';
+  cx.fillText('is a member in good standing, fully submerged,', tx, 448);
+  cx.fillText('and entitled to one (1) hot take per down.', tx, 480);
+  cx.fillStyle = '#d6b25e'; cx.font = '700 20px system-ui, Arial, sans-serif';
+  cx.fillText(`MEMBER #${memberNo}`, tx, 532); cx.fillText(`DEPTH: ${(jumps * 0.5).toFixed(1)} FT`, tx + 230, 532); cx.fillText('VALID: FOREVER', tx + 450, 532);
+  cx.fillStyle = '#fff'; cx.font = 'italic bold 30px Georgia, serif'; cx.textAlign = 'center';
+  cx.fillText("Gig 'em  ·  billyscesspool.me", Wc / 2, Hc - 48);
+  cx.textAlign = 'left';
+}
+photo.onload = drawCard; drawCard();
+$('#handle').addEventListener('input', drawCard);
+const fileName = () => 'cesspool-member-' + (($('#handle').value.trim() || 'card').replace(/[^a-z0-9_-]+/gi, '-').slice(0, 30)) + '.png';
+function cardBlob() { return new Promise((res, rej) => { try { cv.toBlob(b => b ? res(b) : rej(new Error('blob')), 'image/png'); } catch (e) { rej(e); } }); }
+const note = $('#cardNote');
+$('#dl').addEventListener('click', async () => {
+  drawCard();
+  try {
+    const b = await cardBlob(); const url = URL.createObjectURL(b);
+    const a = document.createElement('a'); a.href = url; a.download = fileName(); document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+    note.textContent = 'Downloaded. Welcome to the deep end.'; burst(innerWidth / 2, innerHeight / 2, 'whoop'); whoopSound();
+  } catch (e) { note.textContent = 'Your browser would not let us save the card. Try a screenshot!'; }
+});
+$('#share').addEventListener('click', async () => {
+  drawCard();
+  try {
+    const b = await cardBlob(); const f = new File([b], fileName(), { type: 'image/png' });
+    if (navigator.canShare && navigator.canShare({ files: [f] })) {
+      await navigator.share({ files: [f], title: "Billy's Cesspool", text: "I'm a Certified Cesspool Member. billyscesspool.me" });
+    } else if (navigator.share) {
+      await navigator.share({ title: "Billy's Cesspool", text: "I'm a Certified Cesspool Member.", url: location.href });
+    } else {
+      await navigator.clipboard.writeText('https://billyscesspool.me'); note.textContent = 'Link copied! Download the card to post it.';
+    }
+  } catch (e) { if (e && e.name !== 'AbortError') note.textContent = 'Sharing not supported here. Download the card instead!'; }
+});
+})();
 </script>
 </body>
 </html>
