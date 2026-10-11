@@ -410,7 +410,45 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
 .cslip .disc{font-size:12px;color:#6a4a4a;border-top:1px dashed #a88a8a;margin-top:14px;padding-top:8px;font-family:"Courier New",monospace;line-height:1.5}
 .cflag{position:absolute;right:14px;bottom:12px;z-index:5;background:#fbe1e4;color:#2a1a0a;font-family:"Courier New",monospace;font-weight:700;font-size:12px;padding:7px 10px;border-radius:3px;text-decoration:none;transform:rotate(3deg);box-shadow:0 4px 10px rgba(0,0,0,.4)}
 .cflag:hover,.cflag:focus-visible{transform:rotate(0) scale(1.05);outline:2px solid var(--gold)}
+.coach{max-width:1100px;margin:0 auto 46px;padding:0 16px}
+.coach .card{text-align:left}
+.cc-body{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:0}
+.cc-room{position:relative;background:#2a0a0a;background-image:repeating-linear-gradient(45deg,rgba(214,178,94,.07) 0 2px,transparent 2px 40px),radial-gradient(circle at 50% 35%,#6a1414,#2a0505 75%);display:flex;align-items:flex-end;justify-content:center;min-height:360px;overflow:hidden}
+.cc-room .bd{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);align-content:space-evenly;justify-items:center;font-family:system-ui,Arial,sans-serif;font-weight:900;font-size:11px;letter-spacing:2px;color:rgba(214,178,94,.22);pointer-events:none;text-transform:uppercase}
+.cc-room .cc-live{position:absolute;top:12px;left:12px;background:#c1121f;color:#fff;font:800 11px system-ui,Arial,sans-serif;letter-spacing:1.5px;padding:4px 8px;border-radius:4px;z-index:2}
+.cc-room .cc-live.on{animation:pulse 1.4s infinite}
+.cc-room .room{position:absolute;top:44px;left:12px;color:#e9d9b0;font:600 11px system-ui,Arial,sans-serif;opacity:.8;z-index:2;text-align:left}
+#ccSvg{width:100%;max-width:340px;height:auto;display:block;position:relative;z-index:1}
+#ccMouth{transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(.25)}
+.talk #ccMouth{animation:flap .16s infinite alternate ease-in-out}
+@keyframes flap{0%{transform:scaleY(.2)}100%{transform:scaleY(1.05)}}
+#ccEyes{transform-box:fill-box;transform-origin:center;animation:ccblink 4.2s infinite}
+@keyframes ccblink{0%,95%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+#ccWhistle{transition:transform .15s}
+.blow #ccWhistle{transform:translate(-6px,-58px) rotate(-20deg)}
+#ccTweet{opacity:0;transition:opacity .1s}
+.blow #ccTweet{opacity:1}
+.talk #ccBoard{animation:ccwave .9s infinite alternate ease-in-out;transform-box:fill-box;transform-origin:20% 90%}
+@keyframes ccwave{to{transform:rotate(-5deg)}}
+.cc-panel{padding:18px;display:flex;flex-direction:column;gap:12px}
+.cc-caps{background:#0d0d0d;color:#fff;border-radius:10px;padding:12px 14px;min-height:120px;font-family:"Courier New",monospace;font-size:16px;line-height:1.5;box-shadow:inset 0 0 0 2px #333}
+.cc-caps .who{display:block;color:var(--gold);font:800 11px system-ui,Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.cc-caps .q{display:block;color:#bbb;font-style:italic;font-size:14px;margin-bottom:6px}
+.cc-caps .w{opacity:.35;transition:opacity .12s}
+.cc-caps .w.on{opacity:1}
+.cc-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cc-big{font-size:20px;padding:18px 26px;width:100%}
+.cc-sm{appearance:none;border:2px solid var(--maroon);background:#fff;color:var(--maroon);font:800 13px system-ui,Arial,sans-serif;letter-spacing:.5px;padding:9px 14px;border-radius:999px;cursor:pointer;touch-action:manipulation}
+.cc-sm:hover{background:#f6eded}
+.cc-sm:focus-visible,.cc-big:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cc-sm[aria-pressed=true]{background:var(--maroon);color:#fff}
+.cc-sm:disabled{opacity:.45;cursor:default}
+.cc-note{font:600 12.5px system-ui,Arial,sans-serif;color:#7a5a5a;min-height:18px}
 @media (max-width:820px){
+  .cc-body{grid-template-columns:1fr}
+  .cc-room{min-height:300px}
+  #ccSvg{max-width:280px}
+  .cc-big{font-size:18px;padding:16px 18px}
   .cslip{padding:22px 14px 18px;margin:20px 0 4px;transform:rotate(-.4deg)}
   .cslip dl{grid-template-columns:1fr;gap:0 0}
   .cslip dd{margin-bottom:6px}
@@ -707,6 +745,74 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
         <div class="small-note">Spikes whenever a Panic or Hot thread hits the board. Measured in vibes, rounded to the nearest vibe. Past panic does not guarantee future panic (it does).</div>
       </div>
     </section>
+  </div>
+</section>
+
+<section class="coach" aria-label="Coach Speak Generator starring Coach Clipboard (fictional)">
+  <div class="card">
+    <div class="hd"><h2>🎙️ Coach Speak Generator</h2><span class="pill" title="He is a clipboard. With a visor.">Starring Coach Clipboard (fictional)</span></div>
+    <div class="cc-body">
+      <div class="cc-room" id="ccRoom">
+        <div class="bd" aria-hidden="true"><span>Cesspool</span><span>Press</span><span>Cesspool</span><span>Press</span><span>Cesspool</span><span>Press</span><span>Cesspool</span><span>Press</span><span>Cesspool</span><span>Press</span><span>Cesspool</span><span>Press</span></div>
+        <span class="cc-live" id="ccLive">● Live-ish</span>
+        <span class="room">Press Room B<br>(it's a closet)</span>
+        <svg id="ccSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 330" role="img" aria-label="Coach Clipboard: a cartoon clipboard with a face, wearing a maroon visor and a headset, with a whistle, holding an even bigger clipboard, standing at a podium">
+          <g id="ccBody">
+            <path d="M118 236 L112 300 M162 236 L168 300" stroke="#3a2410" stroke-width="7" stroke-linecap="round"/>
+            <rect x="80" y="70" width="120" height="170" rx="12" fill="#a8743a" stroke="#5a3a18" stroke-width="4"/>
+            <path d="M88 90 q30 6 60 0 t46 2 M88 210 q34 -6 64 0 t40 -2" stroke="#8c5e2c" stroke-width="2" fill="none" opacity=".7"/>
+            <rect x="92" y="88" width="96" height="140" rx="3" fill="#fbf7ea" stroke="#d9cfb0" stroke-width="2"/>
+            <path d="M100 196 h80 M100 208 h80 M100 220 h60" stroke="#c9d6ee" stroke-width="2"/>
+            <path d="M104 184 l8 8 m0 -8 l-8 8 M132 186 a5 5 0 1 0 0.1 0 M150 184 l8 8 m0 -8 l-8 8" stroke="#b3121f" stroke-width="2" fill="none"/>
+            <rect x="112" y="60" width="56" height="26" rx="7" fill="#9aa0a6" stroke="#555" stroke-width="3"/>
+            <rect x="128" y="64" width="24" height="9" rx="4" fill="#5d636a"/>
+            <path d="M76 66 q64 -34 128 0 l4 12 q-68 -26 -136 0 z" fill="#500000" stroke="#2a0000" stroke-width="2"/>
+            <path d="M70 74 q70 -10 140 0 q-8 18 -70 22 q-62 -4 -70 -22z" fill="#6e0a0a" stroke="#2a0000" stroke-width="2"/>
+            <text x="140" y="86" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="10" fill="#d6b25e">CC</text>
+            <g id="ccEyes"><ellipse cx="122" cy="122" rx="11" ry="12" fill="#fff" stroke="#2a1a0a" stroke-width="2.5"/><ellipse cx="158" cy="122" rx="11" ry="12" fill="#fff" stroke="#2a1a0a" stroke-width="2.5"/><circle id="ccP1" cx="124" cy="124" r="5" fill="#2a1a0a"/><circle id="ccP2" cx="160" cy="124" r="5" fill="#2a1a0a"/></g>
+            <path d="M108 104 l24 4 M172 104 l-24 4" stroke="#2a1a0a" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="108" cy="146" r="7" fill="#f2a0a0" opacity=".6"/><circle cx="172" cy="146" r="7" fill="#f2a0a0" opacity=".6"/>
+            <g id="ccMouth"><ellipse cx="140" cy="152" rx="15" ry="11" fill="#5a0a0a" stroke="#2a1a0a" stroke-width="2.5"/><ellipse cx="140" cy="158" rx="8" ry="4" fill="#e0666d"/></g>
+            <path d="M76 96 q-10 -40 64 -44 q74 4 64 44" stroke="#222" stroke-width="5" fill="none"/>
+            <rect x="66" y="94" width="16" height="30" rx="7" fill="#222"/><rect x="198" y="94" width="16" height="30" rx="7" fill="#222"/>
+            <path d="M76 120 q8 34 44 34" stroke="#222" stroke-width="4" fill="none"/><rect x="114" y="148" width="12" height="9" rx="4" fill="#333"/>
+            <path d="M100 160 q40 40 80 0" stroke="#d6b25e" stroke-width="3" fill="none"/>
+            <g id="ccWhistle"><rect x="128" y="186" width="26" height="14" rx="6" fill="#c9ccd1" stroke="#555" stroke-width="2"/><rect x="150" y="189" width="10" height="8" rx="2" fill="#aab0b6" stroke="#555" stroke-width="2"/><circle cx="136" cy="193" r="3" fill="#555"/></g>
+            <g id="ccTweet"><text x="182" y="128" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="#ffd34d" transform="rotate(-12 182 128)">TWEEEET</text></g>
+            <path d="M82 150 q-30 20 -36 54" stroke="#3a2410" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M198 150 q28 6 38 -12" stroke="#3a2410" stroke-width="7" stroke-linecap="round" fill="none"/>
+          </g>
+          <g id="ccBoard">
+            <rect x="214" y="30" width="80" height="116" rx="8" fill="#a8743a" stroke="#5a3a18" stroke-width="3"/>
+            <rect x="221" y="42" width="66" height="96" fill="#fbf7ea"/>
+            <rect x="238" y="24" width="32" height="14" rx="4" fill="#9aa0a6" stroke="#555" stroke-width="2"/>
+            <path d="M228 56 l8 8 m0 -8 l-8 8 M268 52 a6 6 0 1 0 .1 0 M246 80 a6 6 0 1 0 .1 0 M228 100 l8 8 m0 -8 l-8 8 M234 66 q30 30 10 60 q-20 -20 30 -40 q10 30 -30 10" stroke="#b3121f" stroke-width="2" fill="none"/>
+            <text x="254" y="134" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="8" fill="#2a1a0a">PLAN B (C)</text>
+            <circle cx="236" cy="142" r="7" fill="#a8743a" stroke="#3a2410" stroke-width="3"/>
+          </g>
+          <circle cx="46" cy="206" r="7" fill="#a8743a" stroke="#3a2410" stroke-width="3"/>
+          <g id="ccPodium">
+            <path d="M122 214 l-6 -40 M158 214 l6 -40" stroke="#222" stroke-width="3"/>
+            <rect x="108" y="164" width="16" height="12" rx="5" fill="#333"/><rect x="156" y="164" width="16" height="12" rx="5" fill="#333"/>
+            <path d="M60 222 h180 l-14 108 h-152 z" fill="#500000" stroke="#2a0000" stroke-width="3"/>
+            <rect x="56" y="214" width="188" height="14" rx="4" fill="#3a0000"/>
+            <text x="150" y="268" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#d6b25e" letter-spacing="2">CESSPOOL</text>
+            <text x="150" y="290" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#e9d9b0" letter-spacing="3">ATHLETICS (EST. RECENTLY)</text>
+          </g>
+        </svg>
+      </div>
+      <div class="cc-panel">
+        <div class="cc-caps" id="ccCaps" aria-live="polite"><span class="who">Coach Clipboard</span>Press the big button. He has thoughts. None of them are about anything.</div>
+        <button class="btn gold cc-big" id="ccGo">🎙️ Generate Coachspeak</button>
+        <div class="cc-row">
+          <button class="cc-sm" id="ccPress" aria-pressed="false">📺 Press Conference Mode</button>
+          <button class="cc-sm" id="ccCopy" disabled>📋 Copy</button>
+          <button class="cc-sm" id="ccShare" disabled>🖼️ Share as image</button>
+        </div>
+        <div class="cc-note" id="ccNote">Clichés generated: 0. (Infinite supply. We checked.)</div>
+        <div class="fine">Coach Clipboard is fictional. Any resemblance to an actual coach is a coincidence and also a cry for help. Voice is your browser's robot. Every line is randomly assembled from made-up word lists; none of it is a real coach's quote. If sound is off, he speaks in captions only. Nothing is recorded or sent.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2074,6 +2180,259 @@ $('#jump').addEventListener('click', () => panic.bump(1.5));
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(es => { vis = es.some(e => e.isIntersecting); vis ? start() : stop(); }, { threshold: 0.1 }).observe(slip);
   } else { vis = true; start(); }
+})();
+
+/* Coach Speak Generator: Coach Clipboard (fictional). Word lists only; voice is the browser's robot. */
+(() => {
+  const room = $('#ccRoom'), caps = $('#ccCaps'), go = $('#ccGo'), pressBtn = $('#ccPress'), copyBtn = $('#ccCopy'), shareBtn = $('#ccShare'), note = $('#ccNote'), live = $('#ccLive');
+  if (!room) return;
+  const synth = (window.speechSynthesis && window.SpeechSynthesisUtterance) ? window.speechSynthesis : null;
+  let voices = [], fails = 0, transcript = !synth, gen = 0, busy = false, pressOn = false, last = '', count = parseInt(store.get('coachN', '0'), 10) || 0;
+  const loadV = () => { if (!synth) return; try { const all = synth.getVoices(); voices = all.filter(v => /^en/i.test(v.lang)); if (!voices.length) voices = all; } catch (_) {} };
+  loadV(); if (synth && synth.addEventListener) synth.addEventListener('voiceschanged', loadV);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  /* ---- word lists (all original, all generic) ---- */
+  const fixed = [
+    "We're gonna go 1-0 this week, then 1-0 next week, then reassess the definition of a week.",
+    "It's a process. The process has a process. That process is being processed.",
+    "We control what we can control, which this week was the coin toss, and we lost it.",
+    "We're not looking ahead. We're not looking behind. We're mostly looking at this microphone, which is very tall.",
+    "Effort is a choice, and this week we chose a lot of different things.",
+    "Our identity is who we are. Who we are is to be determined. Determination is our identity.",
+    "We had a great week of practice. Then, unfortunately, a game broke out.",
+    "I told the team it's not about the scoreboard. They pointed at the scoreboard. Point taken.",
+    "We're gonna put in the work. Then take the work back out and look at it. Then put it back in. That's called reps.",
+    "It's a four-quarter game. We played about two and a half of them, rounded generously.",
+    "We respect every opponent, every rep, every Tuesday, and every vending machine in this building.",
+    "Momentum is real. We have some. It's in the building somewhere. Facilities is looking.",
+    "There's no I in team. There is an I in film, and I've been watching a lot of it. Mostly the same play.",
+    "We have to win the turnover battle, the field position battle, and the battle with this headset.",
+    "We're a young team. Some of these guys are almost twenty. The clipboard is from 1998.",
+    "Adversity reveals character. This week, character mostly revealed more adversity.",
+    "We had chances. Several. We put them somewhere safe. We cannot find them.",
+    "You can't win the game in the first quarter. We tested that theory thoroughly, and we were right."
+  ];
+  const openers = ['Look,', 'At the end of the day,', "Credit to them, but", 'Like I told the guys,', 'Bottom line:', "I'll say this:",
+    'First of all, great question.', "Not gonna lie to you,", 'We watched the tape, and', "Here's the thing:", 'Honestly, and I mean this,',
+    'Going into the week,', 'Respectfully,', 'If you watch the film,', "I'll be real with you,", 'From where I was standing, which was near the cooler,'];
+  const middles = [
+    "we've gotta be better at being better", "we executed the plan, the plan just wasn't very executable",
+    "we need to win the big moments, the medium moments, and the moments nobody saw", "our guys played with a ton of effort, most of it in a direction",
+    "we left some plays out there, mostly in the parking lot", "we've gotta clean some things up, starting with the locker room, which is genuinely sticky",
+    "we're focused on us, and occasionally the snack table", "the details matter, and we lost the details, and then the folder they were in",
+    "we're going back to the drawing board to see if it left any notes", "it's about winning your one-on-ones, your two-on-twos, and the three-on-threes nobody planned",
+    "we need to finish, and then finish finishing", "we have to stay the course, as soon as we figure out which course",
+    "the effort was there, and so was the scoreboard, unfortunately", "we're taking it week by week, and Tuesday by Tuesday, and lunch by lunch",
+    "we have to be ourselves, but better, and with more first downs", "it comes down to execution, the fourth quarter, and the three quarters before that",
+    "we need to establish the run, then establish it again in case it forgot", "the guys bought in, and now we're figuring out the return policy",
+    "we're building something, and right now that something is a very nice foundation with no walls", "we started fast, then we started slow, then we started a third time"
+  ];
+  const closers = ['And that\'s all I\'ll say about that.', 'We\'ll look at the film. The film will look back.', 'Next question. Actually, same question, different answer.',
+    "I'm proud of the guys. Especially the kicker. He seems nice.", 'We\'ll get it fixed Monday. Tuesday at the latest. Wednesday is a reach.',
+    "That's on me. And partly on the clipboard.", 'We move forward. Sideways counts.', 'Our standard is the standard, and the standard is pending.',
+    "I'd have to look at the tape. I do not know where the tape is.", 'That\'s football. Reportedly.', "I'm not gonna get into specifics. Or generalities.",
+    'We are what we are, and we are looking into what that is.', 'Moving on. Slowly. With purpose.', 'Write that down. Then cross it out. Then write it down again.'];
+  const qs = [
+    ['Coach, thoughts on the cesspool?', ["The cesspool? Never heard of it. We're focused on the water we can control, which is this bottle.", "We don't swim in that. We wade. Strategically. With floaties.", "I don't read about the cesspool. Somebody describes it to me. It sounds damp."]],
+    ['Coach, is it time to panic?', ["Panic is a strong word. We prefer aggressive concern.", "We have a panic protocol. Step one is to find the protocol."]],
+    ['Coach, what happened on that third down?', ["Third down happened. Then fourth down happened. Football is a series of downs.", "We had a great call for that. We had it for second down."]],
+    ['Coach, what is actually on the clipboard?', ["It's a clipboard. It clips. It boards. Next question.", "That's need-to-know. You don't need to know. Neither do I, honestly."]],
+    ["Coach, Bubbles the frog is up two belly sizes. Any comment?", ["I haven't seen the frog. I have heard the frog. The frog is a weekly conversation."]],
+    ['Coach, do you read the message board?', ["I don't read the board. I have someone read it to me, very slowly, in a calming voice."]],
+    ['Coach, are you concerned about the geese?', ["We respect the geese. The geese do not respect us. That's a them problem."]],
+    ["Coach, what's your message to the fans?", ["Stay hydrated. Stay loud. Stay out of the deep end until we get a lifeguard."]],
+    ["Coach, how's the headset holding up?", ["Day to day. It's a lingering antenna issue. We're optimistic."]],
+    ['Coach, a follow-up to my follow-up?', ["Great follow-up. I'll follow up on that. Follow me."]],
+    ["Coach, how's team morale?", ["Morale is high. Morale is low. Morale is medium. We cover every morale."]]
+  ];
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  function coachLine() {
+    let s;
+    if (Math.random() < 0.38) s = rand(fixed);
+    else s = `${rand(openers)} ${rand(middles)}. ${rand(closers)}`;
+    if (s === last) return coachLine();
+    return cap(s);
+  }
+
+  /* ---- sound: whistle, mic tap, press-room static (all synthesized; respects mute) ---- */
+  function whistle(dur = 0.5) {
+    const c = ac(); if (!c) return; const t = c.currentTime;
+    const o = c.createOscillator(); o.type = 'sine'; o.frequency.setValueAtTime(2750, t); o.frequency.linearRampToValueAtTime(2950, t + 0.05);
+    const lfo = c.createOscillator(); lfo.frequency.value = 26; const lg = c.createGain(); lg.gain.value = 160; lfo.connect(lg); lg.connect(o.frequency);
+    const am = c.createGain(); am.gain.value = 0.6; const l2g = c.createGain(); l2g.gain.value = 0.4; lfo.connect(l2g); l2g.connect(am.gain);
+    const g = c.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.16, t + 0.03); g.gain.setValueAtTime(0.16, t + dur - 0.07); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(am); am.connect(g); g.connect(c.destination);
+    const nb = c.createBuffer(1, Math.floor(c.sampleRate * dur), c.sampleRate), d = nb.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    const n = c.createBufferSource(); n.buffer = nb; const hp = c.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 3500; const ng = c.createGain(); ng.gain.value = 0.03;
+    n.connect(hp); hp.connect(ng); ng.connect(g);
+    [o, lfo, n].forEach(x => { x.start(t); x.stop(t + dur + 0.02); });
+  }
+  function micTap() {
+    const c = ac(); if (!c) return; const t = c.currentTime;
+    const o = c.createOscillator(), g = c.createGain(); o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(50, t + 0.12);
+    g.gain.setValueAtTime(0.35, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.16); o.connect(g); g.connect(c.destination); o.start(t); o.stop(t + 0.18);
+  }
+  let staticNode = null;
+  function staticOn() {
+    const c = ac(); if (!c || staticNode) return;
+    const len = 2, b = c.createBuffer(1, c.sampleRate * len, c.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (Math.random() < 0.0015 ? 5 : 0.6);
+    const n = c.createBufferSource(); n.buffer = b; n.loop = true;
+    const f = c.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = 2600; f.Q.value = 0.6;
+    const g = c.createGain(); g.gain.setValueAtTime(0.0001, c.currentTime); g.gain.exponentialRampToValueAtTime(0.035, c.currentTime + 0.15);
+    n.connect(f); f.connect(g); g.connect(c.destination); n.start(); staticNode = { n, g, c };
+  }
+  function staticOff() {
+    if (!staticNode) return; const { n, g, c } = staticNode; staticNode = null;
+    try { g.gain.setTargetAtTime(0.0001, c.currentTime, 0.08); n.stop(c.currentTime + 0.4); } catch (_) {}
+  }
+  function blow() { room.classList.add('blow'); whistle(); setTimeout(() => room.classList.remove('blow'), 550); }
+
+  /* ---- captions with word highlighting ---- */
+  function setCaps(who, text, q) {
+    caps.innerHTML = ''; const w = document.createElement('span'); w.className = 'who'; w.textContent = who; caps.appendChild(w);
+    if (q) { const qq = document.createElement('span'); qq.className = 'q'; qq.textContent = q; caps.appendChild(qq); }
+    const spans = []; let pos = 0;
+    text.split(/(\s+)/).forEach(part => {
+      if (/^\s+$/.test(part) || !part) { caps.appendChild(document.createTextNode(part)); pos += part.length; return; }
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = part; s.dataset.i = pos; caps.appendChild(s); spans.push(s); pos += part.length;
+    });
+    return spans;
+  }
+  const lightTo = (spans, n) => spans.forEach((s, i) => s.classList.toggle('on', i < n));
+
+  /* ---- speak (robot coach / reporter); captions-only when muted or TTS is unavailable ---- */
+  function speak(text, role, q) {
+    const g = gen, isCoach = role === 'coach';
+    const spans = setCaps(isCoach ? 'Coach Clipboard' : 'Reporter (made up)', text, q);
+    if (isCoach) room.classList.add('talk');
+    let shown = 0, timer = null;
+    const per = isCoach ? 260 : 300;
+    const tick = () => { shown = Math.min(spans.length, shown + 1); lightTo(spans, shown); };
+    const done = () => { clearInterval(timer); lightTo(spans, spans.length); room.classList.remove('talk'); };
+    if (reduced) lightTo(spans, spans.length);
+    if (transcript || muted) {
+      if (!reduced) timer = setInterval(tick, per);
+      return sleep((reduced ? 700 : 400) + spans.length * per).then(() => { done(); return g; });
+    }
+    return new Promise(res => {
+      const u = new SpeechSynthesisUtterance(text);
+      if (voices.length) u.voice = isCoach ? voices[0] : voices[Math.min(1, voices.length - 1)];
+      u.rate = isCoach ? 1.22 : 1.05; u.pitch = isCoach ? 0.15 : 1.25; u.volume = 1;
+      let fin = false, gotB = false; const t0 = performance.now();
+      if (!reduced) timer = setInterval(() => { if (!gotB) tick(); }, per);
+      u.onboundary = e => { if (reduced || typeof e.charIndex !== 'number') return; gotB = true; const n = spans.findIndex(s => Number(s.dataset.i) > e.charIndex); lightTo(spans, n < 0 ? spans.length : n); };
+      const end = ok => {
+        if (fin) return; fin = true; done();
+        if (!ok && performance.now() - t0 < 400) { if (++fails >= 3) transcript = true; } else if (ok) fails = 0;
+        setTimeout(() => res(g), 250);
+      };
+      u.onend = () => end(true); u.onerror = () => end(false); setTimeout(() => end(true), 4000 + text.length * 110);
+      try { synth.speak(u); } catch (_) { end(false); }
+    });
+  }
+  function stopAll() {
+    gen++; if (synth) { try { synth.cancel(); } catch (_) {} }
+    staticOff(); room.classList.remove('talk', 'blow'); live.classList.remove('on'); busy = false;
+  }
+  function setLast(s) {
+    last = s; copyBtn.disabled = false; shareBtn.disabled = false;
+    count++; store.set('coachN', String(count)); note.textContent = `Clichés generated: ${count}. (Infinite supply. We checked.)`;
+  }
+
+  /* ---- single quote ---- */
+  async function one() {
+    stopAll(); const g = gen; busy = true; live.classList.add('on');
+    const s = coachLine(); setLast(s);
+    micTap(); await sleep(140); blow(); await sleep(600); if (g !== gen) return;
+    staticOn(); await speak(s, 'coach'); staticOff();
+    if (g === gen) { busy = false; live.classList.remove('on'); }
+  }
+  go.addEventListener('click', () => { if (pressOn) setPress(false); one(); });
+
+  /* ---- press conference mode ---- */
+  async function pressConf() {
+    stopAll(); const g = gen; live.classList.add('on');
+    const pool = [...qs].sort(() => Math.random() - 0.5).slice(0, 4);
+    micTap(); await sleep(150); blow(); await sleep(700); if (g !== gen) return;
+    staticOn();
+    await speak("Okay. Let's do a few. Keep it short. Mine won't be.", 'coach'); if (g !== gen) return;
+    for (const [q, answers] of pool) {
+      await sleep(350); if (g !== gen) return;
+      await speak(q, 'reporter'); if (g !== gen) return;
+      const a = Math.random() < 0.7 ? rand(answers) : coachLine(); setLast(a);
+      await speak(a, 'coach', q); if (g !== gen) return;
+    }
+    await speak("That's all the time we have. We had more time. We gave it back.", 'coach'); if (g !== gen) return;
+    staticOff(); blow(); setPress(false, true);
+  }
+  function setPress(on, natural) {
+    pressOn = on; pressBtn.setAttribute('aria-pressed', String(on));
+    pressBtn.textContent = on ? '⏹ End press conference' : '📺 Press Conference Mode';
+    if (on) pressConf(); else if (!natural) stopAll(); else { live.classList.remove('on'); busy = false; }
+  }
+  pressBtn.addEventListener('click', () => setPress(!pressOn));
+
+  /* ---- copy ---- */
+  copyBtn.addEventListener('click', async () => {
+    if (!last) return; const txt = `"${last}" (Coach Clipboard, a fictional cartoon coach) billyscesspool.me`;
+    try { await navigator.clipboard.writeText(txt); note.textContent = 'Copied. Coachspeak is now your problem.'; } catch (_) { note.textContent = 'Copy failed. The clipboard (the other one) refused.'; }
+  });
+
+  /* ---- share as image ---- */
+  const svgImg = () => new Promise(res => {
+    const src = $('#ccSvg').cloneNode(true); src.querySelector('#ccTweet')?.remove();
+    const img = new Image(); img.onload = () => res(img); img.onerror = () => res(null);
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(src));
+  });
+  function wrap(cx, text, maxW) {
+    const words = text.split(' '), lines = []; let line = '';
+    words.forEach(w => { const t = line ? line + ' ' + w : w; if (cx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; });
+    if (line) lines.push(line); return lines;
+  }
+  async function quoteCard(text) {
+    const W = 1080, H = 1080, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const cx = cv.getContext('2d');
+    const bg = cx.createRadialGradient(W / 2, 380, 80, W / 2, 540, 800); bg.addColorStop(0, '#6a1414'); bg.addColorStop(1, '#2a0505'); cx.fillStyle = bg; cx.fillRect(0, 0, W, H);
+    cx.strokeStyle = '#d6b25e'; cx.lineWidth = 14; cx.strokeRect(28, 28, W - 56, H - 56);
+    cx.fillStyle = '#c1121f'; cx.fillRect(70, 72, 190, 46); cx.fillStyle = '#fff'; cx.font = 'bold 26px Arial, sans-serif'; cx.fillText('● PRESSER', 86, 105);
+    cx.fillStyle = '#d6b25e'; cx.font = '900 44px Georgia, serif'; cx.fillText('COACH CLIPBOARD SAYS:', 290, 112);
+    cx.fillStyle = '#d6b25e'; cx.font = 'bold 170px Georgia, serif'; cx.fillText('\u201C', 52, 290);
+    let size = 58, lines; const maxW = W - 280;
+    do { cx.font = `bold ${size}px Georgia, serif`; lines = wrap(cx, text, maxW); size -= 2; } while (lines.length * size * 1.3 > 470 && size > 26);
+    const lh = (size + 2) * 1.3; cx.fillStyle = '#fff';
+    lines.forEach((l, i) => cx.fillText(l, 165, 230 + i * lh));
+    const img = await svgImg(); if (img) cx.drawImage(img, 60, 640, 340, 374);
+    cx.fillStyle = '#e9d9b0'; cx.font = 'italic 30px Georgia, serif'; cx.fillText('Coach Clipboard is fictional.', 440, 840);
+    cx.font = 'italic 24px Georgia, serif'; cx.fillText('Any resemblance to an actual coach is', 440, 880); cx.fillText('a coincidence and also a cry for help.', 440, 912);
+    cx.fillStyle = '#d6b25e'; cx.font = 'bold 36px Georgia, serif'; cx.fillText("Gig 'em · billyscesspool.me", 440, 980);
+    return cv;
+  }
+  shareBtn.addEventListener('click', async () => {
+    if (!last) return;
+    try {
+      const cv = await quoteCard(last);
+      const b = await new Promise((res, rej) => cv.toBlob(x => x ? res(x) : rej(new Error('blob')), 'image/png'));
+      const f = new File([b], 'coach-clipboard-says.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [f] }) && matchMedia('(pointer:coarse)').matches) {
+        await navigator.share({ files: [f], title: 'Coach Clipboard says', text: 'Coach Clipboard (fictional) has thoughts. billyscesspool.me' });
+        note.textContent = 'Shared. The press has been informed.';
+      } else {
+        const url = URL.createObjectURL(b), a = document.createElement('a'); a.href = url; a.download = 'coach-clipboard-says.png'; document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 4000); note.textContent = 'Quote card saved. Frame it. (Do not frame it.)';
+      }
+    } catch (e) { if (!e || e.name !== 'AbortError') note.textContent = 'Could not make the image here. Screenshot it like a pro.'; }
+  });
+
+  /* pupils follow the pointer a little (because he is listening, allegedly) */
+  if (!reduced) {
+    const p1 = $('#ccP1'), p2 = $('#ccP2');
+    room.addEventListener('pointermove', e => {
+      const r = room.getBoundingClientRect(), dx = clamp((e.clientX - r.left) / r.width * 2 - 1) * 4, dy = clamp((e.clientY - r.top) / r.height * 2 - 1) * 4;
+      p1.setAttribute('cx', 122 + dx); p1.setAttribute('cy', 122 + dy); p2.setAttribute('cx', 158 + dx); p2.setAttribute('cy', 122 + dy);
+    });
+  }
+  addEventListener('pagehide', stopAll);
 })();
 
 /* No-cookie banner (remembers nothing, by design) */
