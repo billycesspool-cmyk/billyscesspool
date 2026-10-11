@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · Billy's Cesspool</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#500000">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
+<style>
+:root{--maroon:#500000;--gold:#d6b25e}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at top,#6a0a0a,#500000 45%,#2a0000);color:#fff;text-align:center;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px 34vh;min-height:100vh}
+.k{font-family:system-ui,Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;font-size:12px;color:var(--gold)}
+h1{font-size:clamp(90px,24vw,200px);line-height:.9;text-shadow:0 6px 0 #2a0000,0 14px 40px rgba(0,0,0,.5);animation:sink 4s ease-in-out infinite}
+@keyframes sink{50%{transform:translateY(14px) rotate(-2deg)}}
+h2{font-size:clamp(22px,4vw,34px);margin:10px 0 6px}
+p{font-family:system-ui,Arial,sans-serif;opacity:.85;max-width:560px;margin:6px auto;font-size:15px;line-height:1.5}
+.stats{font-family:system-ui,Arial,sans-serif;font-size:12px;color:var(--gold);margin:14px 0 18px;letter-spacing:1px}
+a.btn{display:inline-block;font-family:system-ui,Arial,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:1px;text-decoration:none;font-size:16px;padding:14px 26px;border-radius:999px;background:var(--gold);color:#2a1300;box-shadow:0 6px 0 #8a6a22,0 10px 20px rgba(0,0,0,.35);position:relative;z-index:3}
+a.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #8a6a22}
+.small{font-size:12px;opacity:.6;margin-top:14px}
+.water{position:fixed;left:0;right:0;bottom:0;height:30vh;background:linear-gradient(#6c803a,#26301a);z-index:1}
+.water::before{content:"";position:absolute;left:0;right:0;top:-18px;height:36px;background:radial-gradient(ellipse 60px 18px at 50% 100%,#6c803a 98%,transparent 100%) 0 0/120px 36px repeat-x;animation:wave 6s linear infinite}
+@keyframes wave{to{background-position:120px 0}}
+.b{position:fixed;bottom:-20px;border:2px solid rgba(225,240,190,.7);background:rgba(200,220,150,.2);border-radius:50%;z-index:2;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-32vh);opacity:0}}
+footer{position:fixed;bottom:8px;left:0;right:0;z-index:3;font-family:system-ui,Arial,sans-serif;font-size:11px;opacity:.75}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+  <div class="k">Error · Lost at sea (pool)</div>
+  <h1>404</h1>
+  <h2>This page jumped into the deep end and never came back up.</h2>
+  <p>We sent a lifeguard. The lifeguard also hasn't come back up. (We're choosing to believe they found a better pool.)</p>
+  <div class="stats">PAGES FOUND: 0 · PAGES LOST: 1 · POOL NOODLES DEPLOYED: 3 · GEESE INVOLVED: UNCLEAR</div>
+  <a class="btn" href="/">Swim back to safety</a>
+  <p class="small">Or stay here. It's quiet. Too quiet. (A distant whoop.)</p>
+  <div class="water"></div>
+  <span class="b" style="left:12%;width:14px;height:14px;animation-duration:5s"></span>
+  <span class="b" style="left:28%;width:9px;height:9px;animation-duration:7s;animation-delay:1s"></span>
+  <span class="b" style="left:47%;width:18px;height:18px;animation-duration:6s;animation-delay:2s"></span>
+  <span class="b" style="left:66%;width:11px;height:11px;animation-duration:8s"></span>
+  <span class="b" style="left:83%;width:15px;height:15px;animation-duration:5.5s;animation-delay:3s"></span>
+  <footer>Parody site for fun. Not affiliated with Texas A&amp;M, TexAgs, Coach Elko, or Billy. Gig 'em.</footer>
+</body>
+</html>
