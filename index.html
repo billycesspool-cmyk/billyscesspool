@@ -133,7 +133,71 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
 .toast.go{animation:toast 1s ease-out forwards}
 @keyframes toast{0%{opacity:0;transform:translate(-50%,20px) scale(.4) rotate(-8deg)}25%{opacity:1;transform:translate(-50%,0) scale(1.1) rotate(3deg)}100%{opacity:0;transform:translate(-50%,-60px) scale(1) rotate(0)}}
 
+/* ===== Round 2 ===== */
+.tilt{transform-style:preserve-3d;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;will-change:transform}
+.frame{position:relative;overflow:hidden}
+.glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.35),transparent 45%);mix-blend-mode:soft-light;opacity:var(--go,0);transition:opacity .3s}
+.plate{transform:translateZ(40px)}
+.tiltbtn{position:absolute;bottom:10px;left:10px;z-index:5;display:none}
+.grid2{max-width:1100px;margin:0 auto 46px;padding:0 16px;display:grid;grid-template-columns:1.25fr 1fr;gap:26px;text-align:left}
+/* Chat */
+.chat{display:flex;flex-direction:column;height:520px}
+.botnote{font-family:system-ui,Arial,sans-serif;font-size:12px;background:#fff3c8;color:#5a3a00;padding:8px 18px;border-bottom:1px solid #eadfdf}
+#chatLog{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;font-family:system-ui,-apple-system,Arial,sans-serif;font-size:15px;background:#faf6f6;overscroll-behavior:contain}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;line-height:1.4;white-space:pre-wrap;word-wrap:break-word;animation:pop .25s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}}
+.msg.me{align-self:flex-end;background:var(--maroon);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:#fff;color:#1d0c0c;border:1px solid #eadfdf;border-bottom-left-radius:4px}
+.msg.bot b{display:block;font-size:11px;color:var(--maroon);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.dots span{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:#b9a0a0;animation:dot 1s infinite}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-5px);opacity:1}}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:10px 16px 0;background:#fff}
+.chip{font-family:system-ui,Arial,sans-serif;font-size:12px;border:1px solid #e0cccc;background:#fff;color:var(--maroon);border-radius:999px;padding:5px 10px;cursor:pointer}
+.chip:hover{background:#f7eded}
+.chatform{display:flex;gap:8px;padding:12px 16px 16px;background:#fff}
+.chatform input{flex:1;min-width:0;padding:12px 14px;font-size:16px;border:2px solid #e0cccc;border-radius:999px;font-family:system-ui,Arial,sans-serif}
+.chatform input:focus{outline:none;border-color:var(--maroon)}
+/* Radio */
+.radio{padding:18px}
+.onair{display:inline-flex;align-items:center;gap:8px;font-family:system-ui,Arial,sans-serif;font-weight:900;letter-spacing:3px;font-size:13px;padding:6px 12px;border-radius:6px;background:#3a2a2a;color:#8a7777;border:2px solid #5a4444}
+.onair.live{background:#c1121f;color:#fff;border-color:#ff6b6b;box-shadow:0 0 18px rgba(255,60,60,.6);animation:flick 2s infinite}
+@keyframes flick{50%{opacity:.85}}
+.np{margin:14px 0;font-family:system-ui,Arial,sans-serif;background:#1d0c0c;color:#ffe9a8;border-radius:10px;padding:12px 14px;min-height:76px;font-size:14px;line-height:1.45}
+.np .who{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.eq{display:flex;gap:3px;align-items:flex-end;height:28px;margin-left:auto}
+.eq i{display:block;width:5px;height:4px;background:var(--gold);border-radius:2px}
+.eq.on i{animation:eq .5s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:.1s}.eq i:nth-child(3){animation-delay:.25s}.eq i:nth-child(4){animation-delay:.05s}.eq i:nth-child(5){animation-delay:.2s}
+@keyframes eq{to{height:26px}}
+.radio .top{display:flex;align-items:center;gap:10px}
+.small-note{font-family:system-ui,Arial,sans-serif;font-size:12px;color:#8a7777;margin-top:8px}
+/* Panic index */
+.panic{padding:14px 18px 18px;font-family:system-ui,Arial,sans-serif}
+.panic .big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.panic .val{font-size:38px;font-weight:900;color:#1d0c0c;font-variant-numeric:tabular-nums}
+.panic .chg{font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
+.chg.up{color:#c1121f}.chg.down{color:#2b8a3e}
+.panic .defcon{margin-left:auto;font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:var(--maroon);color:#fff}
+#spark{width:100%;height:90px;display:block;margin-top:6px}
+/* Selfie */
+.selfie{max-width:1100px;margin:0 auto 46px;padding:0 16px}
+.selfie .card{display:grid;grid-template-columns:1fr 1.2fr;text-align:left}
+.selfie .form{padding:24px 22px;font-family:system-ui,Arial,sans-serif}
+.selfie .form p{color:#4a3a3a;font-size:15px;margin:8px 0 14px}
+.privacy{background:#eef7ea;border:1px solid #b9dcae;color:#24461a;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:14px}
+.selfie .preview{background:#1b2213;padding:18px;display:flex;align-items:center;justify-content:center;position:relative;min-height:320px}
+#selfieCanvas{width:100%;max-width:520px;height:auto;border-radius:14px;box-shadow:0 14px 36px rgba(0,0,0,.6);background:#26301a}
+#selfieStatus{font-size:13px;color:#7d6a6a;margin-top:10px;min-height:1.4em}
+.selfie input[type=range]{width:100%;accent-color:var(--maroon)}
+.selfie label.r{display:block;font-size:12px;font-weight:700;color:var(--maroon);text-transform:uppercase;letter-spacing:1px;margin-top:12px}
+.filebtn{position:relative;overflow:hidden}
+.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}
 @media (max-width:820px){
+  .grid2{grid-template-columns:1fr}
+  .selfie .card{grid-template-columns:1fr}
+  .chat{height:480px}
   .wrap{grid-template-columns:1fr}
   .member .card{grid-template-columns:1fr}
   #threads{height:400px}
@@ -166,9 +230,12 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
   <div class="sign">Lifeguard on duty<small>Always. Since forever.</small></div>
   <div class="sign r">No running<small>Takes only. No diving into facts.</small></div>
   <div class="floaty">
-    <div class="frame"><img src="billy.webp" alt="Billy in his Texas A&amp;M cap, smiling" width="1672" height="941"></div>
-    <div class="plate">Proprietor<small>Est. Oct 10, 2026</small></div>
+    <div class="tilt" id="tilt">
+      <div class="frame"><img src="billy.webp" alt="Billy in his Texas A&amp;M cap, smiling" width="1672" height="941"><div class="glare"></div></div>
+      <div class="plate">Proprietor<small>Est. Oct 10, 2026</small></div>
+    </div>
   </div>
+  <button class="mute tiltbtn" id="tiltBtn">📱 Enable tilt</button>
   <div class="ring" aria-hidden="true"></div>
   <canvas id="water" aria-hidden="true"></canvas>
 </section>
@@ -225,6 +292,65 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
     </section>
   </div>
 </main>
+
+<section class="grid2" aria-label="Insider bot, radio and panic index">
+  <section class="card chat" aria-label="Ask the Cesspool Insider">
+    <div class="hd"><h2>🕵️ Ask the Cesspool Insider</h2><span class="pill">🤖 Fake bot</span></div>
+    <div class="botnote">This is a joke chatbot made of word lists and pool noodles. It is <b>not Billy</b>, not a real insider, and knows nothing. Every answer is randomly generated nonsense.</div>
+    <div id="chatLog" aria-live="polite"></div>
+    <div class="chips" id="chips"></div>
+    <form class="chatform" id="chatForm" autocomplete="off">
+      <input id="chatIn" maxlength="200" placeholder="Ask the Insider anything..." aria-label="Your question">
+      <button class="btn gold small" type="submit">Ask</button>
+    </form>
+  </section>
+  <div style="display:grid;gap:26px;align-content:start">
+    <section class="card" aria-label="Cesspool Radio">
+      <div class="hd"><h2>📻 Cesspool Radio</h2><span class="pill">1-800-HOT-TAKE</span></div>
+      <div class="radio">
+        <div class="top"><span class="onair" id="onair">● On Air</span><div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="np" id="np"><div class="who">Now playing</div>Dead air. Press play to open the phone lines.</div>
+        <button class="btn gold small" id="radioBtn">▶ Play Cesspool Radio</button>
+        <div class="small-note" id="radioNote">Reads random takes and threads aloud with your browser's built-in voices. All callers are made up.</div>
+      </div>
+    </section>
+    <section class="card" aria-label="Panic Index">
+      <div class="hd"><h2>📈 Panic Index</h2><span class="pill">NYSE: PNC (not really)</span></div>
+      <div class="panic">
+        <div class="big"><span class="val" id="pVal">72.4</span><span class="chg up" id="pChg">▲ 0.0%</span><span class="defcon" id="pLvl">Elevated</span></div>
+        <svg id="spark" viewBox="0 0 300 90" preserveAspectRatio="none" aria-label="Panic index chart" role="img">
+          <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#500000" stop-opacity=".35"/><stop offset="1" stop-color="#500000" stop-opacity="0"/></linearGradient></defs>
+          <path id="pArea" fill="url(#pg)"/><path id="pLine" fill="none" stroke="#500000" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+          <circle id="pDot" r="3.5" fill="#c1121f"/>
+        </svg>
+        <div class="small-note">Spikes whenever a Panic or Hot thread hits the board. Updated live. Measured in vibes.</div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="selfie" aria-label="Join the Cesspool selfie cam">
+  <div class="card">
+    <div class="form">
+      <h2>📸 Join the Cesspool</h2>
+      <p>Put on the official Cesspool cap and wade in. Your camera finds your face and plops a cap on your head, right here in your browser.</p>
+      <div class="privacy">🔒 <b>Nothing is uploaded.</b> The camera only turns on when you press the button, and every frame stays on your device. Face detection runs locally in your browser. Close the camera anytime.</div>
+      <div class="btns" style="justify-content:flex-start">
+        <button class="btn gold small" id="camBtn">🎥 Start camera</button>
+        <span class="btn small filebtn">🖼 Use a photo<input type="file" id="photoIn" accept="image/*" aria-label="Use a photo instead"></span>
+      </div>
+      <label class="r" for="capSize">Cap size</label>
+      <input type="range" id="capSize" min="70" max="160" value="100">
+      <div class="btns" style="justify-content:flex-start;margin-top:12px">
+        <button class="btn gold small" id="snapBtn" disabled>📸 Snap</button>
+        <button class="btn small" id="selfieShare" disabled>Share</button>
+        <button class="btn small" id="camStop" disabled>Stop camera</button>
+      </div>
+      <div id="selfieStatus">Camera is off.</div>
+    </div>
+    <div class="preview"><canvas id="selfieCanvas" width="900" height="1125"></canvas></div>
+  </div>
+</section>
 
 <section class="member" aria-label="Membership card generator">
   <div class="card">
@@ -467,7 +593,7 @@ let tIdx = Math.floor(Math.random() * threads.length);
 const order = threads.map((_, i) => i).sort(() => Math.random() - 0.5);
 function makeThread() {
   const [tag, title] = threads[order[tIdx++ % order.length]];
-  const li = document.createElement('li'); li.className = 'thread';
+  const li = document.createElement('li'); li.className = 'thread'; li.dataset.tag = tag;
   const v = document.createElement('div'); v.className = 'votes';
   const votes = ri(3, 480);
   v.innerHTML = '<span class="arr">▲</span><span class="n"></span>'; v.querySelector('.n').textContent = votes; v.dataset.n = votes;
@@ -484,7 +610,7 @@ function makeThread() {
   return li;
 }
 function pushThread() {
-  ul.prepend(makeThread());
+  ul.prepend(makeThread()); onThread(ul.firstElementChild.dataset.tag);
   while (ul.children.length > 14) ul.lastElementChild.remove();
 }
 for (let i = 0; i < 8; i++) { const li = makeThread(); li.style.animation = 'none'; li.querySelector('.t-meta').lastChild.textContent = li.querySelector('.t-meta').lastChild.textContent.replace('just now', `${ri(2, 59)}m ago`); ul.appendChild(li); }
@@ -613,6 +739,420 @@ $('#share').addEventListener('click', async () => {
     }
   } catch (e) { if (e && e.name !== 'AbortError') note.textContent = 'Sharing not supported here. Download the card instead!'; }
 });
+
+/* ================= ROUND 2 ================= */
+const clamp = (v, a = -1, b = 1) => Math.max(a, Math.min(b, v));
+const takeText = () => { const s = `${rand(openers)} ${rand(subjects)} ${rand(preds)}. ${rand(tails)}`; return s[0].toUpperCase() + s.slice(1); };
+function forceCtx() {
+  const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null;
+  if (!actx) actx = new AC(); if (actx.state === 'suspended') actx.resume(); return actx;
+}
+
+/* ---------- 3D tilt / parallax ---------- */
+(() => {
+  const tiltEl = $('#tilt'), stageEl = document.querySelector('.stage'), frameEl = tiltEl.querySelector('.frame');
+  function setTilt(nx, ny, glow) {
+    tiltEl.style.setProperty('--ry', (nx * 14).toFixed(2) + 'deg');
+    tiltEl.style.setProperty('--rx', (-ny * 10).toFixed(2) + 'deg');
+    frameEl.style.setProperty('--gx', (50 + nx * 45).toFixed(1) + '%');
+    frameEl.style.setProperty('--gy', (35 + ny * 45).toFixed(1) + '%');
+    frameEl.style.setProperty('--go', glow ? String(Math.min(1, 0.35 + Math.hypot(nx, ny))) : '0');
+  }
+  if (reduced) return;
+  stageEl.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const r = stageEl.getBoundingClientRect();
+    setTilt(clamp(((e.clientX - r.left) / r.width - 0.5) * 2), clamp(((e.clientY - r.top) / r.height - 0.5) * 2), true);
+  });
+  stageEl.addEventListener('pointerleave', () => setTilt(0, 0, false));
+  let raf = 0;
+  const onOri = e => {
+    if (e.gamma == null || e.beta == null) return;
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => setTilt(clamp(e.gamma / 25), clamp((e.beta - 45) / 25), true));
+  };
+  if ('DeviceOrientationEvent' in window && matchMedia('(pointer: coarse)').matches) {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      const b = $('#tiltBtn'); b.style.display = 'block';
+      b.addEventListener('click', async () => {
+        try { if ((await DeviceOrientationEvent.requestPermission()) === 'granted') { addEventListener('deviceorientation', onOri); b.remove(); } else b.textContent = 'Tilt not allowed'; }
+        catch (_) { b.textContent = 'Tilt unavailable'; }
+      });
+    } else addEventListener('deviceorientation', onOri);
+  }
+})();
+
+/* ---------- Panic Index ---------- */
+const panic = (() => {
+  const N = 60; const vals = []; let v = 62;
+  for (let i = 0; i < N; i++) { v = clamp(v + (Math.random() - 0.45) * 5 + (58 - v) * 0.05, 5, 99); vals.push(v); }
+  let pending = 0;
+  const lvls = [[0, 'Chill'], [30, 'Simmering'], [50, 'Elevated'], [70, 'Spiraling'], [85, 'Fire Everyone']];
+  function draw() {
+    const pts = vals.map((y, i) => [i * 300 / (N - 1), 86 - y * 0.82]);
+    const line = 'M' + pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' L');
+    $('#pLine').setAttribute('d', line);
+    $('#pArea').setAttribute('d', line + ' L300,90 L0,90 Z');
+    const last = pts[pts.length - 1]; $('#pDot').setAttribute('cx', last[0]); $('#pDot').setAttribute('cy', last[1]);
+    const cur = vals[N - 1], prev = vals[N - 11], ch = (cur - prev) / prev * 100;
+    $('#pVal').textContent = cur.toFixed(1);
+    const c = $('#pChg'); c.textContent = (ch >= 0 ? '▲ ' : '▼ ') + Math.abs(ch).toFixed(1) + '%'; c.className = 'chg ' + (ch >= 0 ? 'up' : 'down');
+    let l = lvls[0][1]; for (const [n, s] of lvls) if (cur >= n) l = s; $('#pLvl').textContent = l;
+  }
+  function tick() {
+    let nv = vals[N - 1] + (Math.random() - 0.48) * 4 + (55 - vals[N - 1]) * 0.04 + pending;
+    pending *= 0.3; vals.push(clamp(nv, 3, 99.9)); vals.shift(); draw();
+  }
+  draw(); setInterval(tick, reduced ? 3000 : 1000);
+  return { bump(n) { pending += n; } };
+})();
+function onThread(tag) { if (tag === 'panic') panic.bump(ri(8, 14)); else if (tag === 'hot') panic.bump(ri(3, 7)); else if (tag === 'locked') panic.bump(-4); }
+$('#whoop').addEventListener('click', () => panic.bump(-5));
+$('#jump').addEventListener('click', () => panic.bump(1.5));
+
+/* ---------- Ask the Cesspool Insider (fake bot) ---------- */
+(() => {
+  const log = $('#chatLog'), form = $('#chatForm'), inp = $('#chatIn');
+  const openersI = ["Hearing rumblings.", "Can't say much, but", "Per my sources (a guy who knows a guy who parks near Kyle Field),",
+    "Not a lot I can share here, but", "Off the record:", "Take this with a grain of salt the size of a pool noodle:",
+    "Strictly between us and the 40,000 people reading this:", "I have it on good authority that", "Been working the phones all night.",
+    "Can't reveal my source, mostly because my source is a vending machine. But"];
+  const closers = ["Gig 'em.", "That's all I can say.", "Don't quote me. Seriously, I'm a fake bot.", "More to come. Maybe.",
+    "Premium members already knew this.", "🤫", "Developing...", "Book it. In pencil.", "I'll update the thread. I won't, but I'll say I will."];
+  const topics = [
+    [/recruit|commit|5.?star|four.?star|portal|signing|visit/i, ["there's a 5-star who was seen eating within 200 miles of College Station. Read into that what you will.",
+      "the portal is open and so is my heart.", "one big commit is coming. Could be a QB. Could be a kicker. Could be my nephew. Stay tuned.",
+      "a top recruit liked a post. Then unliked it. Then liked it again. We're so back."]],
+    [/coach|fire|staff|coordinator|play.?call|elko|hot seat|scheme/i, ["the staff has been watching a LOT of film. Some of it may have been football.",
+      "a coordinator was spotted holding a whiteboard. Big if true.", "nobody is getting fired today. Tomorrow is a whole new day of threads, though.",
+      "the playbook is being updated. I'm told there's a new page. Possibly a cover page."]],
+    [/\bqb\b|quarterback|throw|pass/i, ["the QB room is very much a room. Four walls. Possibly a window. Big things.",
+      "I'm told he can throw it really far. And also short. Incredibly versatile.", "there's a quarterback competition and the frontrunner is whoever completes the next pass."]],
+    [/defen|tackl|blitz|sack|secondary|linebacker/i, ["the defense has been drilling a revolutionary new technique called tackling. Early results: promising.",
+      "the secondary is working on being primary. Huge if it lands."]],
+    [/kick|punt|field goal|\bfg\b|snap/i, ["the kicker has been practicing. Against the wind. Against the odds. Against a goal post we cannot confirm exists.",
+      "the long snapper is the most important man in America and nobody is ready for that conversation."]],
+    [/texas|longhorn|\bt\.?u\b|lsu|bama|alabama|rival|ole miss|oklahoma|sooner|arkansas|auburn|georgia/i, ["the rivals are nervous. I can feel it in my bones. Or my recliner. Hard to tell.",
+      "they're scared. Source: I said so, very confidently.", "I've heard their message board is also a cesspool. Ours is just better kept."]],
+    [/playoff|natty|national|championship|bowl|title|rank|cfp/i, ["the path to the playoff is very simple: win every remaining game. Hearing that's the plan.",
+      "I ran the numbers. Then the numbers ran from me. Still possible!", "I've already reserved a hotel. Refundable. Probably."]],
+    [/panic|worried|scared|over|doom|hope|sad|cry|help/i, ["panic is a renewable resource in here. Use responsibly. Hydrate.",
+      "it's never over until the Panic Index says it's over, and the Panic Index is measured in vibes.", "deep breaths. Then a deeper breath. Then post about it."]],
+    [/weather|rain|hot|heat|cold|forecast/i, ["forecast is 100% chance of takes with scattered overreactions by Saturday night."]],
+    [/food|brisket|buc|tailgate|bbq|kolache|eat|nacho|taco/i, ["the brisket is ready when the board says it's ready. The board says it's been ready since 2004.",
+      "the real insider info is that the kolaches are going fast. Move."]],
+    [/cesspool|pool|swamp|water|noodle|deep end/i, ["water's warm. Visibility zero. Vibes immaculate. Come on in.", "the deep end is open. Lifeguard is on duty, unbothered."]],
+    [/whoop|gig|howdy|aggie|12th|twelfth|yell/i, ["Whoop. That's the whole report. That's all any of us have got."]]
+  ];
+  const special = [
+    [/\bbilly\b|proprietor|owner|editor/i, ["Nope, I'm not Billy. I'm a fake bot that lives inside a pool noodle. The proprietor is in his chair, unbothered, and has nothing to do with me."]],
+    [/are you (real|human|a bot|ai)|who are you|what are you|\bbot\b|\bai\b/i, ["I'm a fake bot running entirely in your browser. No AI, no sources, no clue. Just word lists and confidence."]],
+    [/^\s*(hi|hey|hello|howdy|yo|sup)\b/i, ["Howdy! Pull up a pool noodle. Ask me anything. I know nothing, but I'll say it like I know everything."]]
+  ];
+  const generic = ["there's a lot of smoke on that one. And where there's smoke, there's usually brisket.",
+    "I can neither confirm nor deny, mainly because I don't know what you're talking about.",
+    "something is happening. Possibly this weekend. Possibly in a different sport.",
+    "the answer is yes. Or no. Check back after the next game.",
+    "big news coming on that. I'll post it in a 47-page thread with zero details.",
+    "my sources say the situation is fluid. Everything in a cesspool is fluid, technically."];
+  function answer(q) {
+    for (const [re, a] of special) if (re.test(q)) return rand(a);
+    const hits = topics.filter(([re]) => re.test(q));
+    const body = hits.length ? rand(rand(hits)[1]) : rand(generic);
+    const op = rand(openersI);
+    const joined = /[.:]$/.test(op) ? `${op} ${body[0].toUpperCase()}${body.slice(1)}` : `${op} ${body}`;
+    return `${joined} ${rand(closers)}`;
+  }
+  function bubble(cls, label) {
+    const d = document.createElement('div'); d.className = 'msg ' + cls;
+    if (label) { const b = document.createElement('b'); b.textContent = label; d.appendChild(b); }
+    log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+  }
+  let busy = false;
+  function botSay(text, instant) {
+    return new Promise(res => {
+      const d = bubble('bot', '🤖 Cesspool Insider (fake bot)');
+      if (instant) { d.appendChild(document.createTextNode(text)); return res(); }
+      const dots = document.createElement('span'); dots.className = 'dots'; dots.innerHTML = '<span></span><span></span><span></span>'; d.appendChild(dots);
+      log.scrollTop = log.scrollHeight;
+      setTimeout(() => {
+        dots.remove(); const tn = document.createTextNode(''); d.appendChild(tn);
+        const words = text.split(/(\s+)/); let i = 0;
+        (function step() {
+          tn.data += words.slice(i, i + 2).join(''); i += 2; log.scrollTop = log.scrollHeight;
+          if (i < words.length) setTimeout(step, reduced ? 0 : 35 + Math.random() * 45); else res();
+        })();
+      }, reduced ? 100 : 700 + Math.random() * 900);
+    });
+  }
+  async function ask(q) {
+    q = q.trim().slice(0, 200); if (!q || busy) return;
+    busy = true; inp.disabled = true;
+    bubble('me').textContent = q; inp.value = '';
+    await botSay(answer(q));
+    busy = false; inp.disabled = false;
+  }
+  form.addEventListener('submit', e => { e.preventDefault(); ask(inp.value); });
+  ['Any recruiting news?', 'Should we panic?', "Who's the starting QB?", 'Are you Billy?', 'Playoff chances?', "What's at the tailgate?"].forEach(t => {
+    const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.textContent = t;
+    c.addEventListener('click', () => ask(t)); $('#chips').appendChild(c);
+  });
+  botSay("Howdy. I'm the Cesspool Insider, a fake bot with zero sources and maximum confidence. Ask me anything.", true);
+})();
+
+/* ---------- Cesspool Radio (speechSynthesis) ---------- */
+(() => {
+  const btn = $('#radioBtn'), np = $('#np'), note = $('#radioNote'), onairEl = $('#onair'), eq = $('#eq');
+  const synth = window.speechSynthesis;
+  if (!synth || !window.SpeechSynthesisUtterance) { btn.disabled = true; note.textContent = "Your browser doesn't support speech, so the station is off the air. The takes are still hot below."; return; }
+  let voices = [], onAir = false, fails = 0;
+  const loadVoices = () => { try { const all = synth.getVoices(); voices = all.filter(v => /^en/i.test(v.lang)); if (!voices.length) voices = all; } catch (_) {} };
+  loadVoices(); if ('onvoiceschanged' in synth) synth.onvoiceschanged = loadVoices;
+  const spoken = h => h.replace(/_/g, ' ').replace(/([a-z])([A-Z0-9])/g, '$1 $2').replace(/([0-9])([A-Za-z])/g, '$1 $2');
+  function setNP(who, text) { np.innerHTML = ''; const w = document.createElement('div'); w.className = 'who'; w.textContent = who; np.append(w, document.createTextNode(text)); }
+  function say(text, role, label) {
+    return new Promise(res => {
+      if (!onAir) return res();
+      const u = new SpeechSynthesisUtterance(text);
+      if (voices.length) u.voice = role === 'host' ? voices[0] : voices[ri(0, voices.length - 1)];
+      u.rate = role === 'host' ? 1.05 : 1.08 + Math.random() * 0.15; u.pitch = role === 'host' ? 0.9 : 0.7 + Math.random() * 0.8;
+      let done = false; const t0 = performance.now();
+      const fin = ok => { if (!done) { done = true; if (!ok && performance.now() - t0 < 400) fails++; else fails = 0; setTimeout(res, 350); } };
+      u.onend = () => fin(true); u.onerror = () => fin(false); setTimeout(() => fin(true), 3000 + text.length * 110);
+      setNP(label, text); synth.speak(u);
+    });
+  }
+  function jingle() {
+    return new Promise(res => {
+      const c = forceCtx(); if (!c || !onAir) return res();
+      const t = c.currentTime + 0.05;
+      const mel = [[523.25, 0, .13], [659.25, .14, .13], [783.99, .28, .13], [1046.5, .42, .28], [880, .74, .12], [987.77, .87, .12], [1046.5, 1.0, .55]];
+      mel.forEach(([f, o, d]) => {
+        const os = c.createOscillator(), g = c.createGain(), lp = c.createBiquadFilter();
+        os.type = 'square'; os.frequency.value = f; lp.type = 'lowpass'; lp.frequency.value = 2600;
+        g.gain.setValueAtTime(0.0001, t + o); g.gain.exponentialRampToValueAtTime(0.1, t + o + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + o + d);
+        os.connect(lp); lp.connect(g); g.connect(c.destination); os.start(t + o); os.stop(t + o + d + 0.05);
+      });
+      [[130.81, 0], [174.61, .42], [196, .74], [261.63, 1.0]].forEach(([f, o]) => {
+        const os = c.createOscillator(), g = c.createGain(); os.type = 'triangle'; os.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t + o); g.gain.exponentialRampToValueAtTime(0.2, t + o + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + o + 0.3);
+        os.connect(g); g.connect(c.destination); os.start(t + o); os.stop(t + o + 0.35);
+      });
+      setTimeout(res, 1700);
+    });
+  }
+  const intros = ['Line {n}, {c}, you are in the Cesspool. Go ahead.', "Next up, {c}. Long time listener, first time panicker. What's on your mind?",
+    "{c} on line {n}. You're on the air, and the water is warm.", "Let's go to the phones. {c}, talk to me.", "{c}, you've been holding for forty minutes. That's dedication. Go."];
+  const reacts = ["Wow. Bold. Let's take a quick whoop break.", "I'm going to allow it.", "That is a take. That is definitely a take.",
+    "Somebody check the Panic Index on that one.", "Love the passion. Next caller!", "Thanks for the call. Please do not call back. Kidding. Call back.",
+    "Strong words from a strong caller. Moving on."];
+  async function show() {
+    await jingle();
+    await say("You're listening to Cesspool Radio. All takes, all the time. The phone lines are open and the water is warm.", 'host', '🎙 Host');
+    while (onAir) {
+      const caller = rand(handles);
+      await say(rand(intros).replace('{c}', spoken(caller)).replace('{n}', ri(1, 9)), 'host', '🎙 Host');
+      const line = Math.random() < 0.55 ? takeText() : `Yeah, love the show. I started a thread called: ${rand(threads)[1]}. ${rand(replies)}`;
+      await say(line, 'caller', '📞 ' + caller);
+      panic.bump(ri(1, 5));
+      await say(rand(reacts), 'host', '🎙 Host');
+      if (fails >= 3) { stop(); note.textContent = "Couldn't find a working voice in this browser, so the station went off the air. Try another browser or device."; return; }
+      if (onAir && Math.random() < 0.3) { setNP('🎵 Station ID', "Cesspool Radio. Whoop."); await jingle(); }
+    }
+  }
+  function setUI(on) {
+    onairEl.classList.toggle('live', on); eq.classList.toggle('on', on && !reduced);
+    btn.textContent = on ? '■ Stop Radio' : '▶ Play Cesspool Radio';
+  }
+  function stop() { onAir = false; try { synth.cancel(); } catch (_) {} setUI(false); setNP('Now playing', 'Dead air. Press play to open the phone lines.'); }
+  btn.addEventListener('click', () => {
+    if (onAir) return stop();
+    try { synth.cancel(); } catch (_) {}
+    onAir = true; setUI(true); show().catch(stop);
+  });
+  addEventListener('pagehide', stop);
+})();
+
+/* ---------- Join the Cesspool: selfie cam ---------- */
+(() => {
+  const sc = $('#selfieCanvas'), g = sc.getContext('2d'), SW = sc.width, SH = sc.height;
+  const status = $('#selfieStatus'), camBtn = $('#camBtn'), snapBtn = $('#snapBtn'), shareBtn = $('#selfieShare'), stopBtn = $('#camStop');
+  const MP = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14';
+  const MODEL = 'https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite';
+  let detector = null, detP = null, detMode = 'VIDEO', stream = null, video = null, photo = null, loopOn = false, lastVT = -1;
+  let face = null, target = null, lastBlob = null;
+  const say = t => { status.textContent = t; };
+  function loadDetector() {
+    if (detP) return detP;
+    detP = (async () => {
+      const m = await import(MP + '/vision_bundle.mjs');
+      const fs = await m.FilesetResolver.forVisionTasks(MP + '/wasm');
+      const mk = delegate => m.FaceDetector.createFromOptions(fs, { baseOptions: { modelAssetPath: MODEL, delegate }, runningMode: 'VIDEO', minDetectionConfidence: 0.5 });
+      try { detector = await mk('GPU'); } catch (_) { detector = await mk('CPU'); }
+      detMode = 'VIDEO'; return detector;
+    })().catch(() => { detector = null; return null; });
+    return detP;
+  }
+  async function setMode(mode) { if (detector && detMode !== mode) { await detector.setOptions({ runningMode: mode }); detMode = mode; } }
+  function coverMap(sw, sh) { const s = Math.max(SW / sw, SH / sh); return { s, dx: (SW - sw * s) / 2, dy: (SH - sh * s) / 2 }; }
+  function toTarget(det, sw, sh, mirror) {
+    if (!det) return null;
+    const { s, dx, dy } = coverMap(sw, sh), bb = det.boundingBox;
+    const mx = x => mirror ? SW - (dx + x * s) : dx + x * s, my = y => dy + y * s;
+    const cx = mx(bb.originX + bb.width / 2), cy = my(bb.originY + bb.height / 2), w = bb.width * s, h = bb.height * s;
+    let roll = 0; const k = det.keypoints || [];
+    if (k.length >= 2) {
+      let ax = mx(k[0].x * sw), ay = my(k[0].y * sh), bx = mx(k[1].x * sw), by = my(k[1].y * sh);
+      if (bx < ax) { [ax, bx] = [bx, ax]; [ay, by] = [by, ay]; }
+      roll = clamp(Math.atan2(by - ay, bx - ax), -0.7, 0.7);
+    }
+    return { cx, cy, w, h, roll };
+  }
+  const lerp = (a, b, t) => a + (b - a) * t;
+  function smooth() {
+    if (!target) return;
+    if (!face) { face = { ...target }; return; }
+    for (const k of ['cx', 'cy', 'w', 'h', 'roll']) face[k] = lerp(face[k], target[k], 0.45);
+  }
+  function drawCap(x, y, w, roll) {
+    g.save(); g.translate(x, y); g.rotate(roll); g.scale(w, w);
+    g.shadowColor = 'rgba(0,0,0,.35)'; g.shadowBlur = 0.04; g.shadowOffsetY = 0.02;
+    // crown
+    g.beginPath(); g.moveTo(-0.5, 0); g.bezierCurveTo(-0.52, -0.5, -0.28, -0.7, 0, -0.7); g.bezierCurveTo(0.28, -0.7, 0.52, -0.5, 0.5, 0); g.closePath();
+    const cg = g.createLinearGradient(-0.5, -0.7, 0.5, 0); cg.addColorStop(0, '#ffffff'); cg.addColorStop(0.6, '#f1eeea'); cg.addColorStop(1, '#d9d3cc');
+    g.fillStyle = cg; g.fill(); g.shadowColor = 'transparent';
+    g.lineWidth = 0.008; g.strokeStyle = 'rgba(80,0,0,.25)';
+    [[-0.22, -0.66], [0.22, -0.66]].forEach(([sx]) => { g.beginPath(); g.moveTo(0, -0.7); g.quadraticCurveTo(sx * 1.4, -0.4, sx * 1.6, 0); g.stroke(); });
+    g.beginPath(); g.arc(0, -0.7, 0.035, 0, 6.283); g.fillStyle = '#500000'; g.fill();
+    // front text
+    g.fillStyle = '#500000'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.font = '900 0.115px Georgia, serif'; g.fillText('CESSPOOL', 0, -0.33);
+    g.font = '700 0.045px system-ui, Arial, sans-serif'; g.fillText('EST. 2026', 0, -0.22);
+    // band
+    g.beginPath(); g.moveTo(-0.5, 0); g.quadraticCurveTo(0, -0.05, 0.5, 0); g.lineWidth = 0.025; g.strokeStyle = '#500000'; g.stroke();
+    // bill
+    g.beginPath(); g.moveTo(-0.53, 0.0); g.quadraticCurveTo(0, -0.06, 0.53, 0.0); g.quadraticCurveTo(0.45, 0.16, 0, 0.18); g.quadraticCurveTo(-0.45, 0.16, -0.53, 0.0); g.closePath();
+    const bg = g.createLinearGradient(0, -0.05, 0, 0.22); bg.addColorStop(0, '#6a0a0a'); bg.addColorStop(1, '#3a0000'); g.fillStyle = bg; g.fill();
+    g.lineWidth = 0.008; g.strokeStyle = 'rgba(255,255,255,.35)'; g.setLineDash([0.02, 0.015]);
+    g.beginPath(); g.moveTo(-0.45, 0.03); g.quadraticCurveTo(0, 0.2, 0.45, 0.03); g.stroke(); g.setLineDash([]);
+    g.restore();
+  }
+  const bub = Array.from({ length: 26 }, () => ({ x: Math.random() * SW, y: SH - Math.random() * 200, r: 3 + Math.random() * 9, v: 0.4 + Math.random() * 1.2 }));
+  function drawFrame(t, src) {
+    g.clearRect(0, 0, SW, SH);
+    g.fillStyle = '#26301a'; g.fillRect(0, 0, SW, SH);
+    if (src) {
+      const sw = src.videoWidth || src.naturalWidth, sh = src.videoHeight || src.naturalHeight, { s, dx, dy } = coverMap(sw, sh);
+      g.save(); if (src === video) { g.translate(SW, 0); g.scale(-1, 1); } g.drawImage(src, dx, dy, sw * s, sh * s); g.restore();
+    } else {
+      // placeholder silhouette
+      g.fillStyle = '#3d4a2a'; g.beginPath(); g.ellipse(SW / 2, SH * 0.47, 165, 205, 0, 0, 6.283); g.fill();
+      g.beginPath(); g.ellipse(SW / 2, SH * 0.98, 330, 260, 0, Math.PI, 0); g.fill();
+      g.fillStyle = 'rgba(255,255,255,.55)'; g.font = 'italic 700 40px Georgia, serif'; g.textAlign = 'center'; g.fillText('Your face here', SW / 2, SH * 0.5);
+    }
+    // vignette
+    const vg = g.createRadialGradient(SW / 2, SH * 0.45, SW * 0.35, SW / 2, SH * 0.5, SW * 0.85); vg.addColorStop(0, 'rgba(40,0,0,0)'); vg.addColorStop(1, 'rgba(40,0,0,.55)');
+    g.fillStyle = vg; g.fillRect(0, 0, SW, SH);
+    // cap
+    const scale = Number($('#capSize').value) / 100;
+    if (face) {
+      const d = face.h * 0.7, bx = face.cx + Math.sin(face.roll) * d, by = face.cy - Math.cos(face.roll) * d;
+      drawCap(bx, by, face.w * 1.2 * scale, face.roll);
+    } else drawCap(SW / 2, SH * 0.36, SW * 0.48 * scale, 0);
+    // swamp water
+    const wl = SH - 150;
+    [['rgba(108,128,58,.75)', 0], ['rgba(62,77,34,.95)', 1]].forEach(([c, i]) => {
+      g.fillStyle = c; g.beginPath(); g.moveTo(0, SH);
+      for (let x = 0; x <= SW; x += 10) g.lineTo(x, wl + i * 22 + Math.sin(x / 60 + t * (1.5 + i) + i) * 12 + Math.sin(x / 23 - t * 2) * 4);
+      g.lineTo(SW, SH); g.fill();
+    });
+    bub.forEach(b => {
+      b.y -= b.v; if (b.y < wl - 40) { b.y = SH + 10; b.x = Math.random() * SW; }
+      g.beginPath(); g.arc(b.x + Math.sin(t * 2 + b.r) * 3, b.y, b.r, 0, 6.283); g.fillStyle = 'rgba(200,220,150,.2)'; g.fill();
+      g.lineWidth = 2; g.strokeStyle = 'rgba(225,240,190,.65)'; g.stroke();
+    });
+    // banner
+    g.save(); g.translate(SW / 2, 92); g.rotate(-0.025);
+    g.fillStyle = '#500000'; g.beginPath(); g.moveTo(-400, -48); g.lineTo(400, -48); g.lineTo(380, 0); g.lineTo(400, 48); g.lineTo(-400, 48); g.lineTo(-380, 0); g.closePath(); g.fill();
+    g.lineWidth = 5; g.strokeStyle = '#d6b25e'; g.stroke();
+    g.fillStyle = '#fff'; g.font = '900 50px Georgia, serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('CERTIFIED CESSPOOL MEMBER', 0, 3, 720);
+    g.restore();
+    g.fillStyle = '#fff'; g.font = 'italic 700 38px Georgia, serif'; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+    g.fillText("Gig 'em  ·  billyscesspool.me", SW / 2, SH - 45);
+    g.lineWidth = 14; g.strokeStyle = '#d6b25e'; g.strokeRect(7, 7, SW - 14, SH - 14);
+  }
+  function loop(now) {
+    if (!loopOn) return;
+    const src = video && video.readyState >= 2 ? video : photo;
+    if (src === video && detector && detMode === 'VIDEO' && video.currentTime !== lastVT) {
+      lastVT = video.currentTime;
+      try { const r = detector.detectForVideo(video, now); target = toTarget(r.detections && r.detections[0], video.videoWidth, video.videoHeight, true); if (target) smooth(); } catch (_) {}
+    }
+    drawFrame(now / 1000, src);
+    requestAnimationFrame(loop);
+  }
+  function startLoop() { if (!loopOn) { loopOn = true; requestAnimationFrame(loop); } snapBtn.disabled = false; }
+  function stopCam() {
+    if (stream) stream.getTracks().forEach(t => t.stop());
+    stream = null; video = null; stopBtn.disabled = true; camBtn.disabled = false;
+    if (!photo) { loopOn = false; snapBtn.disabled = true; face = null; drawFrame(0, null); say('Camera is off.'); } else say('Camera off. Using your photo.');
+  }
+  camBtn.addEventListener('click', async () => {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { say('No camera available here (it needs a secure https page). Try "Use a photo" instead!'); return; }
+    camBtn.disabled = true; say('Asking for camera permission...');
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 960 } }, audio: false });
+    } catch (e) { camBtn.disabled = false; say('Camera blocked or unavailable. No worries: try "Use a photo" instead.'); return; }
+    video = document.createElement('video'); video.playsInline = true; video.muted = true; video.srcObject = stream;
+    try { await video.play(); } catch (_) {}
+    photo = null; face = null; target = null; stopBtn.disabled = false; startLoop();
+    say('Camera on. Loading the cap-o-matic face finder...');
+    const d = await loadDetector();
+    if (d) { await setMode('VIDEO'); say('Face found the cap. Smile and hit Snap! (Nothing leaves your device.)'); }
+    else say('Classic mode: line your head up under the cap and use the size slider. Then Snap!');
+  });
+  stopBtn.addEventListener('click', stopCam);
+  $('#photoIn').addEventListener('change', async e => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    if (stream) stopCam();
+    const img = new Image(); img.src = URL.createObjectURL(f);
+    try { await img.decode(); } catch (_) { say("Couldn't read that image. Try another one."); return; }
+    photo = img; face = null; target = null; startLoop(); say('Finding your face...');
+    const d = await loadDetector();
+    if (d) {
+      try { await setMode('IMAGE'); const r = d.detect(img); target = toTarget(r.detections && r.detections[0], img.naturalWidth, img.naturalHeight, false); face = target ? { ...target } : null; } catch (_) { face = null; }
+    }
+    say(face ? 'Cap placed. Looking sharp. Hit Snap!' : 'Couldn\'t find a face, so the cap is floating free. Use the size slider, then Snap!');
+    e.target.value = '';
+  });
+  $('#capSize').addEventListener('input', () => { if (!loopOn) drawFrame(0, null); });
+  const flash = () => { sc.animate([{ filter: 'brightness(2.2)' }, { filter: 'brightness(1)' }], { duration: 350 }); };
+  function shutter() {
+    if (muted) return; const c = ac(); if (!c) return; const t = c.currentTime, len = 0.08;
+    const buf = c.createBuffer(1, c.sampleRate * len, c.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    const n = c.createBufferSource(); n.buffer = buf; const gg = c.createGain(); gg.gain.value = 0.5; n.connect(gg); gg.connect(c.destination); n.start(t);
+  }
+  const blobOf = () => new Promise((res, rej) => { try { sc.toBlob(b => b ? res(b) : rej(new Error('blob')), 'image/png'); } catch (e) { rej(e); } });
+  snapBtn.addEventListener('click', async () => {
+    flash(); shutter();
+    try {
+      lastBlob = await blobOf(); const url = URL.createObjectURL(lastBlob);
+      const a = document.createElement('a'); a.href = url; a.download = 'certified-cesspool-member.png'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000); shareBtn.disabled = false;
+      say('Saved! Welcome to the Cesspool. Share it with your group chat.'); panic.bump(-3);
+    } catch (_) { say("Couldn't save the picture in this browser. Try a screenshot!"); }
+  });
+  shareBtn.addEventListener('click', async () => {
+    try {
+      const b = lastBlob || await blobOf(); const f = new File([b], 'certified-cesspool-member.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [f] })) await navigator.share({ files: [f], title: "Billy's Cesspool", text: "I joined the Cesspool. billyscesspool.me" });
+      else say('Sharing not supported here. The picture was downloaded, so post it from your files!');
+    } catch (e) { if (!e || e.name !== 'AbortError') say('Sharing failed. The download still worked!'); }
+  });
+  addEventListener('pagehide', () => { if (stream) stream.getTracks().forEach(t => t.stop()); });
+  drawFrame(0, null);
+})();
 })();
 </script>
 </body>
