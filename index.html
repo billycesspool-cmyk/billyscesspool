@@ -12,14 +12,14 @@
 <meta property="og:title" content="Billy's Cesspool">
 <meta property="og:description" content="Coach called it a cesspool. Billy pulled up a chair. Now accepting members. (Standards: low. Water: warm.)">
 <meta property="og:url" content="https://billyscesspool.me/">
-<meta property="og:image" content="https://billyscesspool.me/og.jpg?v=3">
+<meta property="og:image" content="https://billyscesspool.me/og.jpg?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Two Certified Cesspool Member cards next to the words Billy's Cesspool">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Billy's Cesspool">
 <meta name="twitter:description" content="Coach called it a cesspool. Billy pulled up a chair. Now accepting members. (Standards: low. Water: warm.)">
-<meta name="twitter:image" content="https://billyscesspool.me/og.jpg?v=3">
+<meta name="twitter:image" content="https://billyscesspool.me/og.jpg?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
 <style>
 :root{--maroon:#500000;--maroon2:#3a0000;--white:#fff;--gold:#d6b25e;--murk1:#4b5a2c;--murk2:#26301a;--ink:#2a0a0a}
@@ -47,7 +47,7 @@ h1 .gold{color:var(--gold)}
 .sign small{display:block;font-weight:600;color:#7a2a2a;letter-spacing:.5px}
 .sign.r{left:auto;right:18px;transform:rotate(5deg)}
 .ring{position:absolute;right:7%;bottom:22%;width:clamp(70px,11vw,110px);aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--white) 0 45deg,var(--maroon) 45deg 90deg,var(--white) 90deg 135deg,var(--maroon) 135deg 180deg,var(--white) 180deg 225deg,var(--maroon) 225deg 270deg,var(--white) 270deg 315deg,var(--maroon) 315deg 360deg);-webkit-mask:radial-gradient(circle,transparent 38%,#000 39%);mask:radial-gradient(circle,transparent 38%,#000 39%);animation:bob 4.2s ease-in-out infinite reverse;z-index:4;filter:drop-shadow(0 6px 6px rgba(0,0,0,.4))}
-.floaty{position:absolute;left:50%;top:7%;width:min(540px,74%);transform:translateX(-50%);z-index:2;animation:bob 3.6s ease-in-out infinite}
+.floaty{position:absolute;left:50%;top:3%;width:min(680px,80%);transform:translateX(-50%);z-index:2;animation:bob 3.6s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.2deg)}50%{transform:translateX(-50%) translateY(14px) rotate(1.2deg)}}
 .ring{transform:none}
 @keyframes bobring{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(10px) rotate(20deg)}}
@@ -444,7 +444,44 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
 .cc-sm[aria-pressed=true]{background:var(--maroon);color:#fff}
 .cc-sm:disabled{opacity:.45;cursor:default}
 .cc-note{font:600 12.5px system-ui,Arial,sans-serif;color:#7a5a5a;min-height:18px}
+.pair.trio{gap:2.5%;align-items:flex-start;justify-content:center}
+.trio + .plate{margin-top:4px}
+.trio .mcard.hl figcaption{margin:8px -22% 0}
+.trio .mcard{position:relative}
+.trio .mcard.emer{width:28%;margin-top:46px;z-index:1}
+.trio .mcard.a{transform:rotate(-6deg)}
+.trio .mcard.b{transform:rotate(5deg) translateY(10px)}
+.trio .mcard.hl{width:40%;z-index:2;transform:rotate(-1deg)}
+.trio .mcard.hl .frame{padding:7px;background:linear-gradient(135deg,#f5df9e,#d6b25e 45%,#a8842e);box-shadow:0 22px 60px rgba(0,0,0,.6),0 0 0 3px rgba(214,178,94,.35)}
+.trio .mcard.emer .frame{filter:saturate(.85)}
+.mtag{display:inline-block;margin-bottom:7px;background:#fff;color:var(--maroon);font:800 10px system-ui,Arial,sans-serif;letter-spacing:1.2px;text-transform:uppercase;padding:4px 8px;border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.mtag.gold{background:linear-gradient(#f5df9e,#d6b25e);color:#3a1d00;font-size:12px;padding:5px 10px}
+.trio .mcard.emer figcaption{font-size:12px}
+.trio .mcard.emer figcaption small{font-size:11px}
+.motw{max-width:1100px;margin:30px auto 0;padding:0 16px}
+.motw .card{text-align:left}
+.motw-body{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;padding:16px 18px 6px;align-items:start}
+.motw .lede{font-family:Georgia,serif;font-style:italic;font-size:19px;color:var(--maroon);margin-bottom:8px}
+.motw ul{margin:0 0 0 18px;font-family:system-ui,Arial,sans-serif;font-size:15px;line-height:1.5;color:#2a1a1a}
+.motw li{margin:6px 0}
+.mstats{background:#fbf6e8;border:2px solid #d6b25e;border-radius:12px;padding:12px 14px;font-family:"Courier New",monospace;font-size:13.5px;color:#2a1a0a}
+.mshd{font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);border-bottom:2px solid #d6b25e;padding-bottom:5px;margin-bottom:6px}
+.mstats dl{display:grid;grid-template-columns:auto 1fr;gap:5px 10px;margin:0}
+.mstats dt{font-weight:700}
+.mstats dd{margin:0}
+.mstats i{color:#7a5a4a}
+.motw-fine{padding:0 18px 14px}
 @media (max-width:820px){
+  .trio .mcard.emer{width:29.5%;margin-top:34px}
+  .trio .mcard.hl{width:42%}
+  .pair.trio{gap:1.5%}
+  .trio .mcard.hl figcaption{margin:6px -12% 0}
+  .mtag{font-size:8px;padding:3px 5px;letter-spacing:.6px}
+  .mtag.gold{font-size:9px;padding:3px 6px}
+  .trio .mcard.emer figcaption{font-size:10px}
+  .trio .mcard.emer figcaption small{font-size:9px}
+  .motw-body{grid-template-columns:1fr}
+  .motw .lede{font-size:17px}
   .cc-body{grid-template-columns:1fr}
   .cc-room{min-height:300px}
   #ccSvg{max-width:280px}
@@ -482,7 +519,7 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
   .rules ul{grid-template-columns:1fr}
   .sign{font-size:10px;padding:6px 8px;top:12px;left:10px}
   .sign.r{right:10px}
-  .floaty{top:15%;width:90%}
+  .floaty{top:12%;width:96%}
   .controls{gap:16px}
   .btn{font-size:16px;padding:14px 22px}
 }
@@ -513,17 +550,24 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
   <div class="sign r">No diving into facts<small>Takes only. Swim at own risk.</small></div>
   <div class="floaty">
     <div class="tilt" id="tilt">
-      <div class="pair">
-        <figure class="mcard a">
+      <div class="pair trio">
+        <figure class="mcard a emer">
+          <span class="mtag">Member Emeritus</span>
           <div class="frame"><img src="members/featured-002.webp" alt="Featured member card: a guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
           <figcaption>Member #002<small>(signed the waiver without reading it)</small></figcaption>
         </figure>
-        <figure class="mcard b">
+        <figure class="mcard hl">
+          <span class="mtag gold">🏆 Member of the Week</span>
+          <div class="frame"><img src="members/featured-004.webp" alt="Member of the Week card: a smiling guest in a patterned jacket holding a microphone, wearing the Cesspool cap" width="900" height="1125"><div class="glare"></div></div>
+          <figcaption>Member #004<small>(dressed for the occasion; the occasion was not informed)</small></figcaption>
+        </figure>
+        <figure class="mcard b emer">
+          <span class="mtag">Member Emeritus</span>
           <div class="frame"><img src="members/featured-003.webp" alt="Featured member card: a smiling guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
           <figcaption>Member #003<small>(smiling because the board hasn't loaded yet)</small></figcaption>
         </figure>
       </div>
-      <div class="plate">Members of the Week<small>(week length subject to change)</small></div>
+      <div class="plate">Member of the Week<small>(plus two Members Emeritus, who were not consulted)</small></div>
     </div>
   </div>
   <a class="cflag" href="#complaint">📝 1 open complaint ↓</a>
@@ -548,6 +592,36 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
       <button class="btn gold" id="whoop" title="Lowers the Panic Index. Science (no).">📣 Whoop! (mandatory)</button>
     </div>
     <div style="margin-top:12px"><button class="mute" id="mute" aria-pressed="false">🔊 Sound on (sorry)</button></div>
+  </div>
+</section>
+
+<section class="motw" aria-label="Member of the Week spotlight">
+  <div class="card">
+    <div class="hd"><h2>🏆 Member of the Week: #004</h2><span class="pill" title="Selected by a clipboard. The clipboard was impressed.">Selected by a clipboard</span></div>
+    <div class="motw-body">
+      <div class="motw-copy">
+        <p class="lede">Dressed for the occasion. The occasion was not informed.</p>
+        <ul>
+          <li><b>Dressed better than the entire cesspool combined.</b> (Low bar. Cleared it by a mile, in a jacket we would like to know more about.)</li>
+          <li><b>Has written more words this season than the cesspool has read.</b> (The cesspool mostly reads thread titles. Sometimes just the first half.)</li>
+          <li><b>Holds an actual title in an actual association,</b> making him the most qualified member by a wide margin. Our previous most qualified member was the frog.</li>
+          <li><b>Arrived with his own microphone.</b> We are not equipped for this. Our sound system is a guy yelling from the shallow end.</li>
+          <li><b>Has covered stadiums all over the country</b> and has now, regrettably, seen this one.</li>
+        </ul>
+      </div>
+      <div class="mstats" aria-label="Member stats">
+        <div class="mshd">Member Stats</div>
+        <dl>
+          <dt>Posts</dt><dd>146,000+ <i>(a light week, apparently)</i></dd>
+          <dt>Jackets</dt><dd>1 <i>(legendary)</i></dd>
+          <dt>Pronunciation guide</dt><dd>Provided <i>(more than most of us can say)</i></dd>
+          <dt>Card lamination</dt><dd>Straight <i>(a first for us)</i></dd>
+          <dt>Complaints filed</dt><dd>0 <i>(see #002 and #003)</i></dd>
+          <dt>Cesspool posts</dt><dd>Pending</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="fine motw-fine">Member of the Week is a parody honor chosen by a clipboard. Captions and blurbs are our jokes, not anything he said, and the site is not affiliated with him or anyone he works with. Please do not tell the other members; they are already filing paperwork.</div>
   </div>
 </section>
 
