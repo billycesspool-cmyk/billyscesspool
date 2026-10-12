@@ -12,14 +12,14 @@
 <meta property="og:title" content="Billy's Cesspool">
 <meta property="og:description" content="Coach called it a cesspool. Billy pulled up a chair. Now accepting members. (Standards: low. Water: warm.)">
 <meta property="og:url" content="https://billyscesspool.me/">
-<meta property="og:image" content="https://billyscesspool.me/og.jpg?v=4">
+<meta property="og:image" content="https://billyscesspool.me/og.jpg?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Two Certified Cesspool Member cards next to the words Billy's Cesspool">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Billy's Cesspool">
 <meta name="twitter:description" content="Coach called it a cesspool. Billy pulled up a chair. Now accepting members. (Standards: low. Water: warm.)">
-<meta name="twitter:image" content="https://billyscesspool.me/og.jpg?v=4">
+<meta name="twitter:image" content="https://billyscesspool.me/og.jpg?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫧</text></svg>">
 <style>
 :root{--maroon:#500000;--maroon2:#3a0000;--white:#fff;--gold:#d6b25e;--murk1:#4b5a2c;--murk2:#26301a;--ink:#2a0a0a}
@@ -471,7 +471,31 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
 .mstats dd{margin:0}
 .mstats i{color:#7a5a4a}
 .motw-fine{padding:0 18px 14px}
+.quad .mcard.d{transform:rotate(-6deg)}
+.quad .duo{transform:rotate(4deg) translateY(6px)}
+.duo-cards{display:flex;justify-content:center}
+.duo-cards .frame{width:68%;flex:none;padding:5px}
+.duo-cards .frame:first-child{transform:rotate(-5deg);z-index:1}
+.duo-cards .frame + .frame{margin-left:-36%;margin-top:26px;transform:rotate(6deg);z-index:2}
+.motw .lore{font-family:system-ui,Arial,sans-serif;font-size:14.5px;line-height:1.5;color:#5a3a3a;background:#fbf6e8;border-left:4px solid #d6b25e;padding:8px 12px;margin:0 0 10px;border-radius:0 8px 8px 0}
+.sitin{margin:6px 18px 12px;background:linear-gradient(#500000,#3a0000);color:#fff;border-radius:14px;padding:14px 16px;box-shadow:inset 0 0 0 3px #d6b25e}
+.sitin-hd{font:900 13px system-ui,Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.sitin-row{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end}
+.sitin-row.btnrow{margin-top:12px;align-items:center}
+.sitin-num b{display:block;font:900 28px Georgia,serif;color:#fff;line-height:1.1}
+.sitin-num span{font:600 12px system-ui,Arial,sans-serif;color:#e9d9b0}
+.sitin-num b.bump{animation:bump .4s}
+#standBtn{background:#e9e1d6;color:#6a5a5a}
+#standBtn.no{animation:shake .35s}
+.sitin-note{margin-top:10px;font:italic 600 14px system-ui,Arial,sans-serif;color:#ffe9a8;min-height:20px}
+.emfile{margin:4px 18px 12px;border:1px solid #eadfdf;border-radius:12px;background:#fffdf8}
+.emfile summary{cursor:pointer;padding:10px 14px;font:800 14px system-ui,Arial,sans-serif;color:var(--maroon)}
+.emfile .motw-body{padding-top:4px}
 @media (max-width:820px){
+  .duo-cards .frame{padding:3px}
+  .sitin{margin:6px 12px 12px}
+  .sitin-num b{font-size:22px}
+  .emfile{margin:4px 12px 12px}
   .trio .mcard.emer{width:29.5%;margin-top:34px}
   .trio .mcard.hl{width:42%}
   .pair.trio{gap:1.5%}
@@ -550,24 +574,27 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
   <div class="sign r">No diving into facts<small>Takes only. Swim at own risk.</small></div>
   <div class="floaty">
     <div class="tilt" id="tilt">
-      <div class="pair trio">
-        <figure class="mcard a emer">
+      <div class="pair trio quad">
+        <figure class="mcard emer d">
           <span class="mtag">Member Emeritus</span>
-          <div class="frame"><img src="members/featured-002.webp" alt="Featured member card: a guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
-          <figcaption>Member #002<small>(signed the waiver without reading it)</small></figcaption>
+          <div class="frame"><img src="members/featured-004.webp" alt="Member Emeritus card: a smiling guest in a patterned jacket holding a microphone, wearing the Cesspool cap" width="900" height="1125"><div class="glare"></div></div>
+          <figcaption>Member #004<small>(dressed for the occasion; the occasion was not informed)</small></figcaption>
         </figure>
         <figure class="mcard hl">
           <span class="mtag gold">🏆 Member of the Week</span>
-          <div class="frame"><img src="members/featured-004.webp" alt="Member of the Week card: a smiling guest in a patterned jacket holding a microphone, wearing the Cesspool cap" width="900" height="1125"><div class="glare"></div></div>
-          <figcaption>Member #004<small>(dressed for the occasion; the occasion was not informed)</small></figcaption>
+          <div class="frame"><img src="members/featured-005.webp" alt="Member of the Week card: a cartoon golden toilet throne with a maroon seat and a Cesspool cap on the tank, a RESERVED: ATMHOCKEY placard, a DO NOT FLUSH (MOMENTUM IN PROGRESS) sign, a momentum meter reading PRESERVED, a roll of toilet paper and a tiny TV showing the game" width="900" height="1125"><div class="glare"></div></div>
+          <figcaption>Atmhockey<small>(has not moved since kickoff; momentum preserved)</small></figcaption>
         </figure>
-        <figure class="mcard b emer">
-          <span class="mtag">Member Emeritus</span>
-          <div class="frame"><img src="members/featured-003.webp" alt="Featured member card: a smiling guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
-          <figcaption>Member #003<small>(smiling because the board hasn't loaded yet)</small></figcaption>
+        <figure class="mcard emer duo">
+          <span class="mtag">Members Emeritus</span>
+          <div class="duo-cards">
+            <div class="frame"><img src="members/featured-002.webp" alt="Member Emeritus card #002: a guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
+            <div class="frame"><img src="members/featured-003.webp" alt="Member Emeritus card #003: a smiling guest wearing the Cesspool cap, framed by swamp water" width="900" height="1125"><div class="glare"></div></div>
+          </div>
+          <figcaption>Members #002 &amp; #003<small>(filed a complaint together; see Compliance)</small></figcaption>
         </figure>
       </div>
-      <div class="plate">Member of the Week<small>(plus two Members Emeritus, who were not consulted)</small></div>
+      <div class="plate">Member of the Week<small>(please remain seated)</small></div>
     </div>
   </div>
   <a class="cflag" href="#complaint">📝 1 open complaint ↓</a>
@@ -595,23 +622,64 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
   </div>
 </section>
 
-<section class="motw" aria-label="Member of the Week spotlight">
+<section class="motw" aria-label="Member of the Week spotlight: Atmhockey">
   <div class="card">
-    <div class="hd"><h2>🏆 Member of the Week: #004</h2><span class="pill" title="Selected by a clipboard. The clipboard was impressed.">Selected by a clipboard</span></div>
+    <div class="hd"><h2>🏆 Member of the Week: <span style="text-transform:none">Atmhockey</span></h2><span class="pill" title="Seriously. Do not knock.">Seated · Do not knock</span></div>
     <div class="motw-body">
       <div class="motw-copy">
-        <p class="lede">Dressed for the occasion. The occasion was not informed.</p>
+        <p class="lede">We need him now more than ever. Please sit on the cesspool.</p>
+        <p class="lore">Message-board legend. Board lore holds that during a big game he stayed seated in the restroom rather than risk changing the momentum. We have no reason to doubt this and several reasons to admire it. (Lore paraphrased by us. He has not been asked. He is busy.)</p>
         <ul>
+          <li><b>Has not moved since kickoff.</b> Will not move until we win two straight. The plan is the plan.</li>
+          <li><b>Understands momentum better than most coordinators,</b> and does it from a much smaller room.</li>
+          <li><b>Snack delivery is handled by Bubbles the frog,</b> who slides them under the door. About half arrive. Bubbles is up another belly size. These facts are related.</li>
+          <li><b>The exhaust fan is running.</b> Leave it. It is part of the formation.</li>
+          <li><b>Do not knock.</b> Do not ask how it is going. It is going.</li>
+        </ul>
+      </div>
+      <div class="mstats" aria-label="Atmhockey status board">
+        <div class="mshd">Status Board</div>
+        <dl>
+          <dt>Momentum</dt><dd>Preserved</dd>
+          <dt>Seat</dt><dd>Warm <i>(reserved)</i></dd>
+          <dt>Legs</dt><dd>Asleep since the second quarter</dd>
+          <dt>Plumbing</dt><dd>Holding <i>(heroically)</i></dd>
+          <dt>Flush</dt><dd>Postponed indefinitely</dd>
+          <dt>Reading material</dt><dd>The entire message board, twice</dd>
+          <dt>Snack courier</dt><dd>Bubbles <i>(delivery rate: about half)</i></dd>
+          <dt>Door</dt><dd>Locked <i>(spiritually)</i></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="sitin" id="sitin">
+      <div class="sitin-hd">🚽 Sit-In Counter</div>
+      <div class="sitin-row">
+        <div class="sitin-num"><b id="sitLive">4,112</b><span>fans currently holding position</span></div>
+        <div class="sitin-num"><b id="sitMine">0</b><span>times you've held position</span></div>
+        <div class="sitin-num"><b id="sitLegs">Awake</b><span>your legs</span></div>
+      </div>
+      <div class="sitin-row btnrow">
+        <button class="btn gold small" id="sitBtn">🚽 Sit with Atmhockey (solidarity)</button>
+        <button class="btn small" id="standBtn" title="Absolutely not.">Stand up</button>
+      </div>
+      <div class="sitin-note" id="sitNote">Nobody move. Nobody flush.</div>
+    </div>
+    <details class="emfile">
+      <summary>📁 Emeritus file: Member #004 (last week's headliner, now honorably reassigned)</summary>
+      <div class="motw-body">
+        <div class="motw-copy">
+          <p class="lede">Dressed for the occasion. The occasion was not informed.</p>
+          <ul>
           <li><b>Dressed better than the entire cesspool combined.</b> (Low bar. Cleared it by a mile, in a jacket we would like to know more about.)</li>
           <li><b>Has written more words this season than the cesspool has read.</b> (The cesspool mostly reads thread titles. Sometimes just the first half.)</li>
           <li><b>Holds an actual title in an actual association,</b> making him the most qualified member by a wide margin. Our previous most qualified member was the frog.</li>
           <li><b>Arrived with his own microphone.</b> We are not equipped for this. Our sound system is a guy yelling from the shallow end.</li>
           <li><b>Has covered stadiums all over the country</b> and has now, regrettably, seen this one.</li>
         </ul>
-      </div>
-      <div class="mstats" aria-label="Member stats">
-        <div class="mshd">Member Stats</div>
-        <dl>
+        </div>
+        <div class="mstats" aria-label="Member #004 stats">
+          <div class="mshd">Member Stats</div>
+          <dl>
           <dt>Posts</dt><dd>146,000+ <i>(a light week, apparently)</i></dd>
           <dt>Jackets</dt><dd>1 <i>(legendary)</i></dd>
           <dt>Pronunciation guide</dt><dd>Provided <i>(more than most of us can say)</i></dd>
@@ -619,9 +687,10 @@ footer{font-family:system-ui,Arial,sans-serif;font-size:12px;opacity:.7;padding:
           <dt>Complaints filed</dt><dd>0 <i>(see #002 and #003)</i></dd>
           <dt>Cesspool posts</dt><dd>Pending</dd>
         </dl>
+        </div>
       </div>
-    </div>
-    <div class="fine motw-fine">Member of the Week is a parody honor chosen by a clipboard. Captions and blurbs are our jokes, not anything he said, and the site is not affiliated with him or anyone he works with. Please do not tell the other members; they are already filing paperwork.</div>
+    </details>
+    <div class="fine motw-fine">Member of the Week is a parody honor chosen by a clipboard. Atmhockey is a message-board handle, featured here with affection; the lore is our paraphrase and nothing here is a quote from him. The "holding position" number is made up, and your sit-ins are saved only in your browser. Nothing is collected or sent. Member #004's blurbs are our jokes too, not anything he said, and the site is not affiliated with anyone featured.</div>
   </div>
 </section>
 
@@ -2511,6 +2580,31 @@ $('#jump').addEventListener('click', () => panic.bump(1.5));
     });
   }
   addEventListener('pagehide', stopAll);
+})();
+
+/* Sit-In Counter: solidarity with Atmhockey (localStorage only; the crowd number is made up) */
+(() => {
+  const btn = $('#sitBtn'); if (!btn) return;
+  const live = $('#sitLive'), mine = $('#sitMine'), legs = $('#sitLegs'), note = $('#sitNote'), stand = $('#standBtn');
+  let n = parseInt(store.get('sitins', '0'), 10) || 0, crowd = ri(3900, 4400);
+  const legState = k => k === 0 ? 'Awake' : k < 3 ? 'Tingling' : k < 6 ? 'Asleep' : k < 12 ? 'Theoretical' : 'Gone (honorably)';
+  const lines = ['Position held. Do not get up.', 'You are in. Your legs will let you know when they are done.', 'Solidarity logged. The momentum thanks you, silently.',
+    'Nobody move. Nobody flush.', 'Bubbles has added you to the snack route. Expect about half.', 'Excellent posture. Terrible decision. Perfect.',
+    'The fan is running. Leave it.', 'Still seated? Still seated.'];
+  const bump = el => { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); };
+  const paint = () => { live.textContent = (crowd + n).toLocaleString(); mine.textContent = n.toLocaleString(); legs.textContent = legState(n); };
+  paint();
+  setInterval(() => { crowd = Math.max(3000, crowd + ri(-6, 9)); live.textContent = (crowd + n).toLocaleString(); }, 2600);
+  btn.addEventListener('click', () => {
+    n++; store.set('sitins', String(n)); paint(); bump(live); bump(mine);
+    note.textContent = lines[(n - 1) % lines.length];
+    const r = btn.getBoundingClientRect(); burst(r.left + r.width / 2, r.top, 'whoop');
+    if (actx && !muted) { const c = ac(); if (c) { const t = c.currentTime; [523.25, 659.25].forEach((f, i) => { const o = c.createOscillator(), g = c.createGain(); o.type = 'triangle'; o.frequency.value = f; g.gain.setValueAtTime(0.0001, t + i * 0.09); g.gain.exponentialRampToValueAtTime(0.12, t + i * 0.09 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.09 + 0.25); o.connect(g); g.connect(c.destination); o.start(t + i * 0.09); o.stop(t + i * 0.09 + 0.3); }); } }
+    panic.bump(-2);
+  });
+  const nope = ['Absolutely not. Momentum.', 'Sit back down. Gently.', 'Standing has been ruled out by the clipboard.', 'Your legs are asleep anyway.'];
+  let k = 0;
+  stand.addEventListener('click', () => { stand.classList.remove('no'); void stand.offsetWidth; stand.classList.add('no'); note.textContent = nope[k++ % nope.length]; });
 })();
 
 /* No-cookie banner (remembers nothing, by design) */
